@@ -30,6 +30,10 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  // Split testimonials for top and bottom rows
+  const topRowTestimonials = testimonials.slice(0, 3);
+  const bottomRowTestimonials = testimonials.slice(3);
+
   return (
     <section className="py-16 bg-navy text-white">
       <div className="container mx-auto px-4">
@@ -40,8 +44,25 @@ const Testimonials = () => {
           <div className="w-20 h-1 bg-gold mx-auto"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
+        {/* Top row - 3 testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {topRowTestimonials.map((testimonial) => (
+            <div 
+              key={testimonial.id} 
+              className="bg-light-navy p-6 rounded-lg shadow-md relative"
+            >
+              <div className="text-gold text-5xl font-serif absolute top-3 left-3 opacity-20">"</div>
+              <p className="text-gray-300 mb-4 relative z-10">
+                {testimonial.quote}
+              </p>
+              <p className="text-gold font-medium italic">— {testimonial.author}</p>
+            </div>
+          ))}
+        </div>
+        
+        {/* Bottom row - 2 testimonials centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {bottomRowTestimonials.map((testimonial) => (
             <div 
               key={testimonial.id} 
               className="bg-light-navy p-6 rounded-lg shadow-md relative"
