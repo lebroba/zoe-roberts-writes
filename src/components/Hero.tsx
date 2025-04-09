@@ -1,11 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
 const Hero = () => {
-  return (
-    <div className="relative bg-cream py-16 md:py-24">
+  return <div className="relative bg-cream py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
@@ -27,19 +24,13 @@ const Hero = () => {
           <div className="flex justify-center md:justify-end mt-8 md:mt-0">
             <div className="relative">
               <div className="absolute -inset-1 rounded-lg bg-gold/20 blur-lg"></div>
-              <img
-                src="/lovable-uploads/08049279-4f0d-42ee-8860-c48608fa1837.png"
-                alt="Zoe Roberts"
-                className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover"
-              />
+              <img alt="Zoe Roberts" className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover" src="/lovable-uploads/f3473e03-4453-45cc-8bf3-cbdc7badfba1.jpg" />
             </div>
           </div>
         </div>
       </div>
       
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-cream/80 to-transparent"></div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
