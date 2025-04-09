@@ -85,6 +85,7 @@
 
   body {
     @apply bg-cream text-foreground font-sans;
+    scroll-behavior: smooth;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -94,7 +95,7 @@
 
 @layer components {
   .book-cover {
-    @apply relative overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl;
+    @apply relative overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl rounded-lg;
   }
   
   .book-cover:hover img {
@@ -102,12 +103,12 @@
   }
 
   .nav-link {
-    @apply relative inline-block py-2 text-navy hover:text-gold transition-colors duration-200;
+    @apply relative inline-block py-2 text-navy hover:text-gold transition-colors duration-300;
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-500;
   }
 
   .nav-link:hover::after {
@@ -122,4 +123,45 @@
     content: '';
     @apply absolute bottom-0 left-0 w-1/3 h-1 bg-gold;
   }
+  
+  .glow-effect {
+    @apply relative overflow-hidden;
+  }
+  
+  .glow-effect::before {
+    content: '';
+    @apply absolute -inset-0.5 bg-gradient-to-r from-gold/30 to-navy/30 rounded-lg blur-sm opacity-0 transition-opacity duration-300;
+  }
+  
+  .glow-effect:hover::before {
+    @apply opacity-100;
+  }
+  
+  .soft-shadow {
+    box-shadow: 0 10px 30px -15px rgba(26, 54, 93, 0.15);
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
 }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
