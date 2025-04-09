@@ -4,27 +4,27 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const FeaturedBooks = () => {
-  // Mock data for featured books
+  // Updated featured books with the children's book as the first item
   const featuredBooks = [
     {
       id: 1,
-      title: "The Echo of Silence",
-      coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&h=600&q=80",
-      description: "A haunting tale of loss, memory, and redemption set against the backdrop of a small coastal town.",
+      title: "Power-Up Your Mind",
+      coverImage: "/lovable-uploads/95471984-914d-4073-a844-8c979dccba59.png",
+      description: "An empowering guide that helps children aged 8-12 develop a growth mindset to boost confidence and creativity.",
       year: "2023"
     },
     {
       id: 2,
-      title: "Whispers in the Garden",
-      coverImage: "https://images.unsplash.com/photo-1575123750793-3732d09e4d0e?auto=format&fit=crop&w=400&h=600&q=80",
-      description: "An intimate portrait of three generations of women and the garden that binds their stories together.",
+      title: "The Echo of Silence",
+      coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&h=600&q=80",
+      description: "A haunting tale of loss, memory, and redemption set against the backdrop of a small coastal town.",
       year: "2021"
     },
     {
       id: 3,
-      title: "The Lost Season",
-      coverImage: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=400&h=600&q=80",
-      description: "A compelling drama that explores the unspoken truths within a family during a transformative summer.",
+      title: "Whispers in the Garden",
+      coverImage: "https://images.unsplash.com/photo-1575123750793-3732d09e4d0e?auto=format&fit=crop&w=400&h=600&q=80",
+      description: "An intimate portrait of three generations of women and the garden that binds their stories together.",
       year: "2019"
     }
   ];
@@ -35,7 +35,7 @@ const FeaturedBooks = () => {
         <div className="text-center mb-12">
           <h2 className="section-heading text-center mx-auto">Featured Books</h2>
           <p className="max-w-2xl mx-auto text-gray-700">
-            Discover Zoe Roberts' most celebrated works, where complex characters navigate the depths of human experience.
+            Discover Zoe Roberts' most celebrated works, from growth mindset guides for tweens to novels where complex characters navigate the depths of human experience.
           </p>
         </div>
         
@@ -53,7 +53,7 @@ const FeaturedBooks = () => {
               <p className="text-sm text-gray-600 mb-3">{book.year}</p>
               <p className="text-center text-gray-700 mb-4 text-sm">{book.description}</p>
               <Button variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white">
-                Read More
+                <Link to="/books">Read More</Link>
               </Button>
             </div>
           ))}

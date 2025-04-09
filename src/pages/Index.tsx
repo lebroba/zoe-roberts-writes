@@ -9,7 +9,7 @@ import NewsletterBanner from "@/components/NewsletterBanner";
 
 const Index = () => {
   return (
-    <Layout>
+    <Layout className="bg-soft-gold/30">
       <Hero />
       <FeaturedBooks />
       <AboutPreview />

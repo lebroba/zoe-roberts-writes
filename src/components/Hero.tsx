@@ -10,10 +10,10 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-navy mb-4 leading-tight">
-              Words that Transform <span className="text-gold">Lives</span>
+              Empowering <span className="text-gold">Minds</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-md mx-auto md:mx-0">
-              Explore the captivating novels of award-winning author Zoe Roberts, where human connections and complex emotions come to life.
+              Explore the inspirational books of author Zoe Roberts, where growth mindset strategies and compelling stories help readers of all ages unlock their potential.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button asChild className="bg-navy hover:bg-light-navy text-white">
@@ -28,7 +28,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute -inset-1 rounded-lg bg-gold/20 blur-lg"></div>
               <img
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=600&h=800&q=80"
+                src="/lovable-uploads/08049279-4f0d-42ee-8860-c48608fa1837.png"
                 alt="Zoe Roberts"
                 className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover"
               />

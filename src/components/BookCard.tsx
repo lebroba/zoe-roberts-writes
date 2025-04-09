@@ -8,6 +8,7 @@ interface BookCardProps {
   description: string;
   publishYear: string;
   purchaseLink: string;
+  category?: string;
 }
 
 const BookCard: React.FC<BookCardProps> = ({
@@ -16,6 +17,7 @@ const BookCard: React.FC<BookCardProps> = ({
   description,
   publishYear,
   purchaseLink,
+  category,
 }) => {
   return (
     <div className="flex flex-col md:flex-row gap-6 mb-12">
@@ -30,8 +32,16 @@ const BookCard: React.FC<BookCardProps> = ({
       </div>
       <div className="w-full md:w-2/3">
         <h3 className="text-2xl font-playfair font-bold text-navy mb-2">{title}</h3>
-        <p className="text-sm text-gray-600 mb-4">{publishYear}</p>
-        <p className="mb-6 text-gray-800">{description}</p>
+        <div className="flex flex-wrap gap-2 mb-3">
+          <p className="text-sm text-gray-600">{publishYear}</p>
+          {category && (
+            <>
+              <span className="text-sm text-gray-400">•</span>
+              <p className="text-sm text-gray-600">{category}</p>
+            </>
+          )}
+        </div>
+        <p className="mb-6 text-gray-800 whitespace-pre-line">{description}</p>
         <Button
           asChild
           className="bg-navy hover:bg-light-navy text-white"
