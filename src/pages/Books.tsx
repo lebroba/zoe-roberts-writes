@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import BookCard from "@/components/BookCard";
 
 const Books = () => {
-  // Updated book data with the expanded children's book description
+  // Updated book data with only Power-Up Your Mind book
   const books = [
     {
       id: 1,
@@ -14,16 +14,7 @@ const Books = () => {
       publishYear: "2023",
       purchaseLink: "https://a.co/d/52Rw8Dw",
       category: "Children's Books, Growth Mindset"
-    },
-    {
-      id: 4,
-      title: "The Lost Season",
-      coverImage: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=400&h=600&q=80",
-      description: "A compelling drama that explores the unspoken truths within a family during a transformative summer. When the patriarch of the Morrison family falls ill, his three adult children return to the family lake house for what may be their final season together.\n\nAs buried resentments and long-held secrets surface, each family member must decide what to preserve and what to let go. A powerful examination of family dynamics, forgiveness, and the stories we tell ourselves to survive.",
-      publishYear: "2017",
-      purchaseLink: "https://www.amazon.com",
-      category: "Fiction, Family Drama"
-    },
+    }
   ];
 
   return (
