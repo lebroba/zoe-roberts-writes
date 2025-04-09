@@ -11,21 +11,7 @@ const FeaturedBooks = () => {
       title: "Power-Up Your Mind",
       coverImage: "/lovable-uploads/95471984-914d-4073-a844-8c979dccba59.png",
       description: "An empowering guide that helps children aged 8-12 develop a growth mindset to boost confidence and creativity.",
-      year: "2025"
-    },
-    {
-      id: 2,
-      title: "The Echo of Silence",
-      coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&h=600&q=80",
-      description: "A haunting tale of loss, memory, and redemption set against the backdrop of a small coastal town.",
-      year: "2021"
-    },
-    {
-      id: 3,
-      title: "Whispers in the Garden",
-      coverImage: "https://images.unsplash.com/photo-1575123750793-3732d09e4d0e?auto=format&fit=crop&w=400&h=600&q=80",
-      description: "An intimate portrait of three generations of women and the garden that binds their stories together.",
-      year: "2019"
+      year: "2023"
     }
   ];
 
