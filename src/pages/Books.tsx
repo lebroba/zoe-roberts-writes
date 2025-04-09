@@ -16,24 +16,6 @@ const Books = () => {
       category: "Children's Books, Growth Mindset"
     },
     {
-      id: 2,
-      title: "The Echo of Silence",
-      coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&h=600&q=80",
-      description: "A haunting tale of loss, memory, and redemption set against the backdrop of a small coastal town. When Eliza returns to her childhood home after twenty years, she must confront the ghosts of her past and the silence that has shaped her life.\n\nWith lyrical prose and deep psychological insight, this novel explores how the echoes of trauma reverberate through generations and the healing power of confronting long-buried truths.",
-      publishYear: "2021",
-      purchaseLink: "https://www.amazon.com",
-      category: "Fiction, Literary Fiction"
-    },
-    {
-      id: 3,
-      title: "Whispers in the Garden",
-      coverImage: "https://images.unsplash.com/photo-1575123750793-3732d09e4d0e?auto=format&fit=crop&w=400&h=600&q=80",
-      description: "An intimate portrait of three generations of women and the garden that binds their stories together. Through the changing seasons of one pivotal year, grandmother, mother, and daughter tend to the same plot of earth while navigating the complexities of their relationships with each other.\n\nA meditation on growth, legacy, and the wisdom that blooms alongside the flowers, this novel celebrates the subtle ways we nurture each other and ourselves.",
-      publishYear: "2019",
-      purchaseLink: "https://www.amazon.com",
-      category: "Fiction, Family Drama"
-    },
-    {
       id: 4,
       title: "The Lost Season",
       coverImage: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=400&h=600&q=80",
