@@ -11,7 +11,7 @@ const FeaturedBooks = () => {
       title: "Power-Up Your Mind",
       coverImage: "/lovable-uploads/95471984-914d-4073-a844-8c979dccba59.png",
       description: "An empowering guide that helps children aged 8-12 develop a growth mindset to boost confidence and creativity.",
-      year: "2023"
+      year: "2025"
     }
   ];
 
