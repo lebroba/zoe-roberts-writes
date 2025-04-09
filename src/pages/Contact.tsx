@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, X, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -173,7 +173,7 @@ const Contact = () => {
                     rel="noopener noreferrer" 
                     className="bg-navy text-white p-3 rounded-full hover:bg-gold transition-colors"
                   >
-                    <Twitter size={20} />
+                    <X size={20} />
                   </a>
                   <a 
                     href="https://instagram.com" 

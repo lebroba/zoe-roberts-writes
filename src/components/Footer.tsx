@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Mail } from "lucide-react";
+import { Facebook, X, Instagram, Mail } from "lucide-react";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -20,7 +20,7 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
-                <Twitter size={20} />
+                <X size={20} />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
                 <Instagram size={20} />
