@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,17 +12,19 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
-    <div className={cn("flex flex-col min-h-screen", className)}>
+    <div className={cn("flex flex-col min-h-screen bg-pattern", className)}>
       <Navbar />
-      <motion.main 
-        className="flex-grow"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        {children}
-      </motion.main>
+      <AnimatePresence mode="wait">
+        <motion.main 
+          className="flex-grow"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {children}
+        </motion.main>
+      </AnimatePresence>
       <Footer />
     </div>
   );
