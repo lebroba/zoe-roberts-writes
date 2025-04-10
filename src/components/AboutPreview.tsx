@@ -1,11 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
 const AboutPreview = () => {
-  return (
-    <section className="py-16 bg-cream">
+  return <section className="py-16 bg-cream">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
@@ -23,17 +20,11 @@ const AboutPreview = () => {
           <div className="flex justify-center">
             <div className="relative">
               <div className="absolute -inset-1 rounded-lg bg-gold/20 blur-lg"></div>
-              <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&h=700&q=80"
-                alt="Zoe Roberts writing at her desk"
-                className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover"
-              />
+              <img alt="Zoe Roberts writing at her desk" className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover" src="/lovable-uploads/49a51533-b979-473c-bf79-acb6fcedee6e.jpg" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutPreview;
