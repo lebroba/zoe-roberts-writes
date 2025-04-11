@@ -26,7 +26,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-12">
             <Link to="/" className="nav-link text-base">Home</Link>
             <Link to="/books" className="nav-link text-base">Books</Link>
-            <Link to="/events" className="nav-link text-base">Events & Signings</Link>
+            <Link to="/freebies" className="nav-link text-base">Freebies</Link>
             <Link to="/about" className="nav-link text-base">About</Link>
             <Link to="/contact" className="nav-link text-base">Contact & Social</Link>
           </div>
@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="absolute z-50 bg-cream p-4 border-b border-soft-gold md:hidden w-full animate-fade-in">
           <div className="flex flex-col space-y-4">
             <Link to="/books" className="nav-link" onClick={toggleMenu}>Books</Link>
-            <Link to="/events" className="nav-link" onClick={toggleMenu}>Events & Signings</Link>
+            <Link to="/freebies" className="nav-link" onClick={toggleMenu}>Freebies</Link>
             <Link to="/about" className="nav-link" onClick={toggleMenu}>About</Link>
             <Link to="/contact" className="nav-link" onClick={toggleMenu}>Contact & Social</Link>
           </div>
