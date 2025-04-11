@@ -5,6 +5,12 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, FileText, Bookmark, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
+// Define animation variants outside of components so both can use them
+const itemAnimation = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
+
 const Freebies = () => {
   const freebieItems = [
     {
@@ -77,11 +83,6 @@ const Freebies = () => {
         staggerChildren: 0.1
       }
     }
-  };
-
-  const itemAnimation = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
   };
 
   return (
