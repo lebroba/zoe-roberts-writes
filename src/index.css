@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -48,7 +47,42 @@
   }
 
   .dark {
-    /* ... keep existing code (dark mode variables) */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 41 72% 47%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 212.5 59% 9%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 41 72% 76%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 212.5 59% 9%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 212.7 26.8% 83.9%;
   }
 }
 
@@ -87,6 +121,11 @@
 
   .nav-link:hover::after {
     @apply w-full;
+  }
+
+  /* Updated nav link styling for the new header design */
+  .nav-link {
+    @apply relative inline-block py-1 text-navy hover:text-gold transition-colors duration-300 tracking-wider uppercase font-medium text-sm;
   }
 
   .section-heading {

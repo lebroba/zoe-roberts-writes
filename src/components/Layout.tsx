@@ -13,7 +13,9 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
     <div className={cn("flex flex-col min-h-screen bg-pattern", className)}>
-      <Navbar />
+      <header className="w-full">
+        <Navbar />
+      </header>
       <AnimatePresence mode="wait">
         <motion.main 
           className="flex-grow"
