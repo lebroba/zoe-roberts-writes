@@ -79,7 +79,7 @@ const Freebies = () => {
     }
   };
 
-  const item = {
+  const itemAnimation = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
   };
@@ -127,7 +127,7 @@ const FreebieCard = ({ freebie }: { freebie: any }) => {
   return (
     <motion.div 
       className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300"
-      variants={item}
+      variants={itemAnimation}
     >
       <div className="flex items-start">
         <div className="bg-soft-gold bg-opacity-20 p-3 rounded-full mr-4">
