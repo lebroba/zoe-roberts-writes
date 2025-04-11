@@ -124,24 +124,14 @@ const Freebies = () => {
                   </p>
                 </div>
                 <div className="md:w-1/2">
-                  
+                  <MindsetQuiz />
                 </div>
               </div>
             </div>
           </div>
           
-          {/* Interactive Quiz Section */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-playfair font-bold text-navy mb-6 text-center">Mindset Quiz</h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-8">
-              Take our interactive quiz to discover whether you have a growth or fixed mindset, 
-              and receive personalized recommendations based on your results.
-            </p>
-            <MindsetQuiz />
-          </div>
-          
           {/* Downloadable Resources Section */}
-          <h2 className="text-3xl font-playfair font-bold text-navy mb-6 text-center">More Free Resources</h2>
+          <h2 className="text-3xl font-playfair font-bold text-navy mb-6 text-center">Free Resources</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-12">
             Browse through these free downloadable resources to enhance your reading experience 
             and get a taste of Zoe's literary world.
