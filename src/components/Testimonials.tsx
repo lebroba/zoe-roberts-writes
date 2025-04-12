@@ -9,7 +9,7 @@ const testimonials = [
   },
   {
     id: 2,
-    quote: "Every tween deserves this book on their shelf. This is more than a guide—it's a toolbox of confidence. My daughter devoured it and immediately started shifting her language from 'I'm not good at this' to 'I'm still learning.' Watching her begin to believe in her ability to grow has been one of the most rewarding experiences of my life. This book gives kids the power to rewrite their inner story.",
+    quote: "Every tween deserves this book on their shelf. This is more than a guide, it's a toolbox of confidence. My daughter devoured it and immediately started shifting her language from 'I'm not good at this' to 'I'm still learning.' Watching her begin to believe in her ability to grow has been one of the most rewarding experiences of my life. This book gives kids the power to rewrite their inner story.",
     author: "Dana K., Parent of a 10-year-old",
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
   },
   {
     id: 4,
-    quote: "A fresh, empowering approach to mindset education. This book doesn't just teach concepts—it transforms how tweens think about learning and mistakes. My son loved the superhero theme, and I loved how naturally it led us into meaningful conversations. If you're a parent, teacher, or mentor who wants to help kids embrace challenges and believe in themselves, this book is a treasure.",
+    quote: "A fresh, empowering approach to mindset education. This book doesn't just teach concepts, it transforms how tweens think about learning and mistakes. My son loved the superhero theme, and I loved how naturally it led us into meaningful conversations. If you're a parent, teacher, or mentor who wants to help kids embrace challenges and believe in themselves, this book is a treasure.",
     author: "Jessica Morales, 5th Grade Teacher and Youth Mentor",
   },
   {
