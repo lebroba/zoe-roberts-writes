@@ -4,7 +4,7 @@ import React from "react";
 const testimonials = [
   {
     id: 1,
-    quote: "A game-changer for tweens and their parents! As a parent and school counselor, I've been waiting for a book just like Power-Up Your Mind. It speaks directly to tweens in a way that's engaging, encouraging, and most importantly—empowering. The strategies are age-appropriate, easy to implement, and filled with heart. I especially loved how it reframes failure as part of learning. I'll be recommending this to every family I work with!",
+    quote: "A game-changer for tweens and their parents! As a parent and school counselor, I've been waiting for a book just like Power-Up Your Mind. It speaks directly to tweens in a way that's engaging, encouraging, and most importantly - empowering. The strategies are age-appropriate, easy to implement, and filled with heart. I especially loved how it reframes failure as part of learning. I'll be recommending this to every family I work with!",
     author: "Melissa J. Klein, M.Ed., School Counselor and Parent of Two",
   },
   {
