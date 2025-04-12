@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     id: 5,
-    quote: "Finally—a growth mindset book that tweens actually want to read! As an educator, I've seen my fair share of 'self-help' books for kids, but Power-Up Your Mind stands out because it truly understands its audience. It's colorful, positive, and never talks down to kids. The section on goal-setting and self-talk is worth the price alone. Highly recommended for classrooms, families, and anyone who believes in building strong, confident young minds.",
+    quote: "Finally! A growth mindset book that tweens actually want to read! As an educator, I've seen my fair share of 'self-help' books for kids, but Power-Up Your Mind stands out because it truly understands its audience. It's colorful, positive, and never talks down to kids. The section on goal-setting and self-talk is worth the price alone. Highly recommended for classrooms, families, and anyone who believes in building strong, confident young minds.",
     author: "Robert T. Fields, MS, Educational Psychologist",
   },
 ];
