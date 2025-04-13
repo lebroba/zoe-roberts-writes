@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -49,7 +48,30 @@ const Hero = () => {
                 <Link to="/about">About Zoe</Link>
               </Button>
             </motion.div>
+            
+            {/* New Amazon lockup section */}
+            <motion.div 
+              className="mt-4 flex justify-center md:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <a 
+                href="https://a.co/d/52Rw8Dw" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
+                aria-label="Available at Amazon"
+              >
+                <img 
+                  src="/lovable-uploads/6aa77f68-f503-4d06-b291-4d8c95afca3f.png" 
+                  alt="Available at Amazon" 
+                  className="w-[150px]"
+                />
+              </a>
+            </motion.div>
           </motion.div>
+          
           <motion.div 
             className="flex justify-center md:justify-end mt-8 md:mt-0"
             initial={{ opacity: 0, scale: 0.95 }}
