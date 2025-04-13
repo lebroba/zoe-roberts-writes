@@ -35,8 +35,9 @@ const Hero = () => {
             >
               Explore the inspirational books of author Zoe Roberts, where growth mindset strategies and compelling stories help readers of all ages unlock their potential.
             </motion.p>
+            
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -47,15 +48,6 @@ const Hero = () => {
               <Button asChild variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white transition-all duration-300">
                 <Link to="/about">About Zoe</Link>
               </Button>
-            </motion.div>
-            
-            {/* New Amazon lockup section */}
-            <motion.div 
-              className="mt-4 flex justify-center"  // Changed from 'justify-center md:justify-start' to just 'justify-center'
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
               <a 
                 href="https://a.co/d/52Rw8Dw" 
                 target="_blank" 
@@ -70,6 +62,8 @@ const Hero = () => {
                 />
               </a>
             </motion.div>
+            
+            
           </motion.div>
           
           <motion.div 
