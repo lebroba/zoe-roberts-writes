@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -55,10 +54,11 @@ const FeaturedBooks = () => {
                         className="inline-block"
                         aria-label="Available at Amazon"
                       >
-                        <div className="bg-[#232F3E] text-white text-xs px-2 py-1 rounded flex items-center">
-                          <span className="mr-1">Available at</span>
-                          <span className="font-bold">amazon</span>
-                        </div>
+                        <img 
+                          src="/lovable-uploads/6aa77f68-f503-4d06-b291-4d8c95afca3f.png" 
+                          alt="Available at Amazon" 
+                          className="min-w-[90px] max-w-[200px]"
+                        />
                       </a>
                     </div>
                   </div>
