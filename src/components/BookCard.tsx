@@ -28,6 +28,20 @@ const BookCard: React.FC<BookCardProps> = ({
             alt={`${title} book cover`}
             className="w-full max-w-[250px] transition-transform duration-300"
           />
+          <div className="mt-4 flex justify-center">
+            <a 
+              href={purchaseLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block"
+              aria-label="Available at Amazon"
+            >
+              <div className="bg-[#232F3E] text-white text-xs px-2 py-1 rounded flex items-center">
+                <span className="mr-1">Available at</span>
+                <span className="font-bold">amazon</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <div className="w-full md:w-2/3">

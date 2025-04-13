@@ -13,7 +13,8 @@ const FeaturedBooks = () => {
       title: "Power-Up Your Mind",
       coverImage: "/lovable-uploads/95471984-914d-4073-a844-8c979dccba59.png",
       description: "An empowering guide that helps children aged 8-12 develop a growth mindset to boost confidence and creativity.",
-      year: "2025"
+      year: "2025",
+      purchaseLink: "https://a.co/d/52Rw8Dw"
     }
   ];
 
@@ -46,6 +47,20 @@ const FeaturedBooks = () => {
                       alt={`${book.title} book cover`} 
                       className="w-full max-w-[200px] transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="mt-4 flex justify-center">
+                      <a 
+                        href={book.purchaseLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-block"
+                        aria-label="Available at Amazon"
+                      >
+                        <div className="bg-[#232F3E] text-white text-xs px-2 py-1 rounded flex items-center">
+                          <span className="mr-1">Available at</span>
+                          <span className="font-bold">amazon</span>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                   <h3 className="text-xl font-playfair font-bold text-navy mb-2">{book.title}</h3>
                   <p className="text-sm text-gold font-medium mb-3">{book.year}</p>
