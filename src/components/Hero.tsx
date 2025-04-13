@@ -51,7 +51,7 @@ const Hero = () => {
             
             {/* New Amazon lockup section */}
             <motion.div 
-              className="mt-4 flex justify-center md:justify-start"
+              className="mt-4 flex justify-center"  // Changed from 'justify-center md:justify-start' to just 'justify-center'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
