@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Freebies from "./pages/Freebies";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import './i18n';
 
 const queryClient = new QueryClient();
 
@@ -25,9 +26,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/freebies" element={<Freebies />} />
           <Route path="/contact" element={<Contact />} />
-          {/* Redirect /events to /freebies */}
           <Route path="/events" element={<Navigate to="/freebies" replace />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,35 @@
+
+{
+  "hero": {
+    "title": "Capacitando Mentes",
+    "description": "Explore os livros inspiradores da autora Zoe Roberts, onde estratégias de mentalidade de crescimento e histórias cativantes ajudam leitores de todas as idades a desbloquear seu potencial."
+  },
+  "nav": {
+    "home": "Início",
+    "books": "Livros",
+    "about": "Sobre",
+    "freebies": "Brindes",
+    "contact": "Contato"
+  },
+  "books": {
+    "title": "Livros de Zoe Roberts",
+    "description": "Descubra as obras literárias de Zoe, desde livros infantis capacitadores sobre mentalidade de crescimento até romances que tecem personagens complexos e profundidade emocional.",
+    "featuredTitle": "Livros em Destaque",
+    "featuredDescription": "Descubra as obras mais celebradas de Zoe Roberts, desde guias de mentalidade de crescimento para pré-adolescentes até romances onde personagens complexos navegam pelas profundezas da experiência humana.",
+    "readMore": "Leia Mais",
+    "viewAll": "Ver Todos os Livros",
+    "purchaseNow": "Comprar Agora",
+    "availableAtAmazon": "Disponível na Amazon"
+  },
+  "footer": {
+    "about": "Autora premiada de ficção literária explorando conexões humanas e emoções complexas.",
+    "quickLinks": "Links Rápidos",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Inscreva-se para receber atualizações sobre novos lançamentos, eventos e conteúdo exclusivo.",
+      "placeholder": "Seu endereço de e-mail",
+      "subscribe": "Inscrever-se"
+    },
+    "rights": "Todos os direitos reservados."
+  }
+}

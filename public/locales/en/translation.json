@@ -1,0 +1,35 @@
+
+{
+  "hero": {
+    "title": "Empowering Minds",
+    "description": "Explore the inspirational books of author Zoe Roberts, where growth mindset strategies and compelling stories help readers of all ages unlock their potential."
+  },
+  "nav": {
+    "home": "Home",
+    "books": "Books",
+    "about": "About",
+    "freebies": "Freebies",
+    "contact": "Contact"
+  },
+  "books": {
+    "title": "Books by Zoe Roberts",
+    "description": "Discover Zoe's literary works, from empowering children's books on growth mindset to compelling novels that weave together complex characters and emotional depth.",
+    "featuredTitle": "Featured Books",
+    "featuredDescription": "Discover Zoe Roberts' most celebrated works, from growth mindset guides for tweens to novels where complex characters navigate the depths of human experience.",
+    "readMore": "Read More",
+    "viewAll": "View All Books",
+    "purchaseNow": "Purchase Now",
+    "availableAtAmazon": "Available at Amazon"
+  },
+  "footer": {
+    "about": "Award-winning author of literary fiction exploring human connections and complex emotions.",
+    "quickLinks": "Quick Links",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Subscribe to receive updates on new releases, events, and exclusive content.",
+      "placeholder": "Your email address",
+      "subscribe": "Subscribe"
+    },
+    "rights": "All rights reserved."
+  }
+}

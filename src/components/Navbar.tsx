@@ -1,79 +1,81 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Facebook, Instagram, Mail } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const menuItems = [
+    { path: '/', label: t('nav.home') },
+    { path: '/books', label: t('nav.books') },
+    { path: '/about', label: t('nav.about') },
+    { path: '/freebies', label: t('nav.freebies') },
+    { path: '/contact', label: t('nav.contact') }
+  ];
+
   return (
-    <nav className="w-full bg-cream">
-      {/* Author name centered at top */}
-      <div className="text-center py-8">
-        <Link to="/" className="text-4xl md:text-6xl font-playfair font-bold text-navy tracking-widest">
-          ZOE ROBERTS
+    <header className="bg-white border-b border-gray-200">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <Link to="/" className="text-2xl font-playfair font-bold text-navy">
+          Zoe Roberts
         </Link>
-      </div>
 
-      {/* Navigation links centered below */}
-      <div className="border-t border-b border-soft-gold py-4">
-        <div className="container mx-auto px-4 flex justify-center">
-          {/* Desktop navigation */}
-          <div className="hidden md:flex items-center space-x-12">
-            <Link to="/" className="nav-link text-base">Home</Link>
-            <Link to="/books" className="nav-link text-base">Books</Link>
-            <Link to="/freebies" className="nav-link text-base">Freebies</Link>
-            <Link to="/about" className="nav-link text-base">About</Link>
-            <Link to="/contact" className="nav-link text-base">Contact & Social</Link>
-          </div>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden flex w-full justify-between items-center">
-            <Link to="/" className="nav-link text-base">Home</Link>
-            
-            <div className="flex items-center">
-              {/* Mobile social icons */}
-              <div className="flex space-x-3 mr-4">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-navy hover:text-gold transition-colors" aria-label="Facebook">
-                  <Facebook size={18} />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-navy hover:text-gold transition-colors" aria-label="Twitter">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.8 10.5L21.75 1.5H20.25L13.25 9.5L7.75 1.5H1.5L9.75 13.5L1.5 22.5H3L10.25 14.5L16 22.5H22.25L13.8 10.5ZM4.5 3H6.75L19.5 21H17.25L4.5 3Z" />
-                  </svg>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-navy hover:text-gold transition-colors" aria-label="Instagram">
-                  <Instagram size={18} />
-                </a>
-              </div>
-              <button
-                className="text-navy focus:outline-none"
-                onClick={toggleMenu}
-                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        <nav className="hidden md:flex items-center space-x-6">
+          {menuItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className="text-gray-700 hover:text-navy transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <LanguageSwitcher />
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+          <button
+            onClick={toggleMenu}
+            className="md:hidden text-gray-600 hover:text-navy focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 z-10 ${
+            isMenuOpen ? 'block' : 'hidden'
+          }`}
+        >
+          <div className="px-4 py-4 flex flex-col space-y-4">
+            {menuItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="text-gray-700 hover:text-navy transition-colors block py-2"
+                onClick={closeMenu}
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Mobile navigation menu */}
-      {isMenuOpen && (
-        <div className="absolute z-50 bg-cream p-4 border-b border-soft-gold md:hidden w-full animate-fade-in">
-          <div className="flex flex-col space-y-4">
-            <Link to="/books" className="nav-link" onClick={toggleMenu}>Books</Link>
-            <Link to="/freebies" className="nav-link" onClick={toggleMenu}>Freebies</Link>
-            <Link to="/about" className="nav-link" onClick={toggleMenu}>About</Link>
-            <Link to="/contact" className="nav-link" onClick={toggleMenu}>Contact & Social</Link>
-          </div>
-        </div>
-      )}
-    </nav>
+    </header>
   );
 };
 

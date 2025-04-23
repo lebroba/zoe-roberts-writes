@@ -1,0 +1,35 @@
+
+{
+  "hero": {
+    "title": "Autonomiser les Esprits",
+    "description": "Découvrez les livres inspirants de l'auteure Zoe Roberts, où les stratégies d'état d'esprit de croissance et les histoires captivantes aident les lecteurs de tous âges à libérer leur potentiel."
+  },
+  "nav": {
+    "home": "Accueil",
+    "books": "Livres",
+    "about": "À propos",
+    "freebies": "Cadeaux",
+    "contact": "Contact"
+  },
+  "books": {
+    "title": "Livres de Zoe Roberts",
+    "description": "Découvrez les œuvres littéraires de Zoe, des livres pour enfants stimulants sur l'état d'esprit de croissance aux romans qui tissent des personnages complexes et une profondeur émotionnelle.",
+    "featuredTitle": "Livres en Vedette",
+    "featuredDescription": "Découvrez les œuvres les plus célèbres de Zoe Roberts, des guides d'état d'esprit de croissance pour préados aux romans où des personnages complexes naviguent dans les profondeurs de l'expérience humaine.",
+    "readMore": "Lire Plus",
+    "viewAll": "Voir Tous les Livres",
+    "purchaseNow": "Acheter Maintenant",
+    "availableAtAmazon": "Disponible sur Amazon"
+  },
+  "footer": {
+    "about": "Auteure primée de fiction littéraire explorant les connexions humaines et les émotions complexes.",
+    "quickLinks": "Liens Rapides",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Abonnez-vous pour recevoir des mises à jour sur les nouvelles sorties, les événements et le contenu exclusif.",
+      "placeholder": "Votre adresse e-mail",
+      "subscribe": "S'abonner"
+    },
+    "rights": "Tous droits réservés."
+  }
+}

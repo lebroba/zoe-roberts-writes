@@ -1,0 +1,35 @@
+
+{
+  "hero": {
+    "title": "Empoderando Mentes",
+    "description": "Explora los libros inspiradores de la autora Zoe Roberts, donde las estrategias de mentalidad de crecimiento e historias cautivadoras ayudan a los lectores de todas las edades a liberar su potencial."
+  },
+  "nav": {
+    "home": "Inicio",
+    "books": "Libros",
+    "about": "Sobre",
+    "freebies": "Regalos",
+    "contact": "Contacto"
+  },
+  "books": {
+    "title": "Libros de Zoe Roberts",
+    "description": "Descubre las obras literarias de Zoe, desde libros infantiles que empoderan con mentalidad de crecimiento hasta novelas que entrelazan personajes complejos y profundidad emocional.",
+    "featuredTitle": "Libros Destacados",
+    "featuredDescription": "Descubre las obras más célebres de Zoe Roberts, desde guías de mentalidad de crecimiento para preadolescentes hasta novelas donde los personajes navegan las profundidades de la experiencia humana.",
+    "readMore": "Leer Más",
+    "viewAll": "Ver Todos los Libros",
+    "purchaseNow": "Comprar Ahora",
+    "availableAtAmazon": "Disponible en Amazon"
+  },
+  "footer": {
+    "about": "Autora galardonada de ficción literaria que explora las conexiones humanas y las emociones complejas.",
+    "quickLinks": "Enlaces Rápidos",
+    "newsletter": {
+      "title": "Boletín",
+      "description": "Suscríbete para recibir actualizaciones sobre nuevos lanzamientos, eventos y contenido exclusivo.",
+      "placeholder": "Tu correo electrónico",
+      "subscribe": "Suscribirse"
+    },
+    "rights": "Todos los derechos reservados."
+  }
+}
