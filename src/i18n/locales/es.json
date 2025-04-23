@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "home": "Inicio",
@@ -25,5 +24,55 @@
     "placeholder": "Tu correo electrónico",
     "subscribe": "Suscribirse",
     "privacy": "Tu información nunca será compartida. Cancela cuando quieras."
+  },
+  "books": {
+    "pageTitle": "Libros de Zoe Roberts",
+    "description": "Explora las obras literarias de Zoe, desde libros infantiles que empoderan con mentalidad de crecimiento hasta novelas que entrelazan personajes complejos y profundidad emocional.",
+    "purchaseNow": "Comprar Ahora",
+    "availableAt": "Disponible en Amazon"
+  },
+  "events": {
+    "pageTitle": "Eventos",
+    "description": "Únete a Zoe Roberts en próximas lecturas, firmas, talleres y eventos literarios en todo el país.",
+    "upcomingEvents": "Próximos Eventos",
+    "pastEvents": "Eventos Pasados",
+    "register": "Registrarse",
+    "date": "Fecha",
+    "time": "Hora",
+    "location": "Ubicación"
+  },
+  "contact": {
+    "pageTitle": "Contacto",
+    "description": "¿Tienes una pregunta, solicitud o simplemente quieres conectar? Contáctanos usando el formulario a continuación.",
+    "name": "Nombre *",
+    "email": "Correo electrónico *",
+    "subject": "Asunto",
+    "message": "Mensaje *",
+    "sendMessage": "Enviar Mensaje",
+    "contactInfo": "Información de Contacto",
+    "followZoe": "Sigue a Zoe",
+    "subjects": {
+      "select": "Por favor selecciona",
+      "general": "Consulta General",
+      "event": "Solicitud de Evento",
+      "media": "Consulta de Medios",
+      "rights": "Consulta de Derechos",
+      "other": "Otro"
+    },
+    "success": "¡Mensaje enviado!",
+    "successDetail": "Gracias por tu mensaje. Te responderemos pronto.",
+    "error": "Información faltante",
+    "errorDetail": "Por favor completa todos los campos requeridos."
+  },
+  "footer": {
+    "description": "Autora premiada de ficción literaria que explora las conexiones humanas y las emociones complejas.",
+    "quickLinks": "Enlaces Rápidos",
+    "newsletter": {
+      "title": "Boletín",
+      "description": "Suscríbete para recibir actualizaciones sobre nuevos lanzamientos, eventos y contenido exclusivo.",
+      "placeholder": "Tu correo electrónico",
+      "subscribe": "Suscribirse"
+    },
+    "rights": "Todos los derechos reservados."
   }
 }

@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "home": "Home",
@@ -25,5 +24,55 @@
     "placeholder": "Your email address",
     "subscribe": "Subscribe",
     "privacy": "Your information will never be shared. Unsubscribe anytime."
+  },
+  "books": {
+    "pageTitle": "Books by Zoe Roberts",
+    "description": "Explore Zoe's literary works, from empowering children's books on growth mindset to compelling novels that weave together complex characters and emotional depth.",
+    "purchaseNow": "Purchase Now",
+    "availableAt": "Available at Amazon"
+  },
+  "events": {
+    "pageTitle": "Events",
+    "description": "Join Zoe Roberts at upcoming readings, signings, workshops, and literary events around the country.",
+    "upcomingEvents": "Upcoming Events",
+    "pastEvents": "Past Events",
+    "register": "Register",
+    "date": "Date",
+    "time": "Time",
+    "location": "Location"
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "description": "Have a question, request, or just want to connect? Reach out using the form below.",
+    "name": "Name *",
+    "email": "Email *",
+    "subject": "Subject",
+    "message": "Message *",
+    "sendMessage": "Send Message",
+    "contactInfo": "Contact Information",
+    "followZoe": "Follow Zoe",
+    "subjects": {
+      "select": "Please select",
+      "general": "General Inquiry",
+      "event": "Event Request",
+      "media": "Media Inquiry",
+      "rights": "Rights Inquiry",
+      "other": "Other"
+    },
+    "success": "Message sent!",
+    "successDetail": "Thank you for your message. We'll get back to you soon.",
+    "error": "Missing information",
+    "errorDetail": "Please fill out all required fields."
+  },
+  "footer": {
+    "description": "Award-winning author of literary fiction exploring human connections and complex emotions.",
+    "quickLinks": "Quick Links",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Subscribe to receive updates on new releases, events, and exclusive content.",
+      "placeholder": "Your email address",
+      "subscribe": "Subscribe"
+    },
+    "rights": "All rights reserved."
   }
 }

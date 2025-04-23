@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Mail } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   return (
@@ -12,7 +14,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-playfair font-bold mb-4">Zoe Roberts</h3>
             <p className="text-sm text-gray-300 mb-4">
-              Award-winning author of literary fiction exploring human connections and complex emotions.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
@@ -33,36 +35,36 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-playfair font-bold mb-4">Quick Links</h3>
+            <h3 className="text-xl font-playfair font-bold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-300 hover:text-gold transition-colors">Home</Link></li>
-              <li><Link to="/books" className="text-gray-300 hover:text-gold transition-colors">Books</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-gold transition-colors">About</Link></li>
-              <li><Link to="/events" className="text-gray-300 hover:text-gold transition-colors">Events</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-gold transition-colors">Contact</Link></li>
+              <li><Link to="/" className="text-gray-300 hover:text-gold transition-colors">{t('nav.home')}</Link></li>
+              <li><Link to="/books" className="text-gray-300 hover:text-gold transition-colors">{t('nav.books')}</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-gold transition-colors">{t('nav.about')}</Link></li>
+              <li><Link to="/events" className="text-gray-300 hover:text-gold transition-colors">{t('nav.events')}</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-gold transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-xl font-playfair font-bold mb-4">Newsletter</h3>
+            <h3 className="text-xl font-playfair font-bold mb-4">{t('footer.newsletter.title')}</h3>
             <p className="text-sm text-gray-300 mb-4">
-              Subscribe to receive updates on new releases, events, and exclusive content.
+              {t('footer.newsletter.description')}
             </p>
             <form className="flex flex-col space-y-2">
               <input 
                 type="email" 
-                placeholder="Your email address" 
+                placeholder={t('footer.newsletter.placeholder')}
                 className="px-4 py-2 bg-light-navy text-white border border-gray-600 rounded focus:outline-none focus:border-gold"
               />
               <button type="submit" className="px-4 py-2 bg-gold text-navy font-medium rounded hover:bg-soft-gold transition-colors">
-                Subscribe
+                {t('footer.newsletter.subscribe')}
               </button>
             </form>
           </div>
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {year} Zoe Roberts. All rights reserved.</p>
+          <p>&copy; {year} Zoe Roberts. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

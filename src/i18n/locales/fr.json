@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "home": "Accueil",
@@ -25,5 +24,55 @@
     "placeholder": "Votre adresse email",
     "subscribe": "S'abonner",
     "privacy": "Vos informations ne seront jamais partagées. Désabonnement possible à tout moment."
+  },
+  "books": {
+    "pageTitle": "Livres de Zoe Roberts",
+    "description": "Découvrez les œuvres littéraires de Zoe, des livres pour enfants encourageant l'état d'esprit de croissance aux romans entrelaçant des personnages complexes et une profondeur émotionnelle.",
+    "purchaseNow": "Acheter Maintenant",
+    "availableAt": "Disponible sur Amazon"
+  },
+  "events": {
+    "pageTitle": "Événements",
+    "description": "Rejoignez Zoe Roberts lors de ses prochaines lectures, séances de dédicaces, ateliers et événements littéraires à travers le pays.",
+    "upcomingEvents": "Événements à Venir",
+    "pastEvents": "Événements Passés",
+    "register": "S'inscrire",
+    "date": "Date",
+    "time": "Heure",
+    "location": "Lieu"
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "description": "Vous avez une question, une demande ou vous souhaitez simplement prendre contact ? Utilisez le formulaire ci-dessous.",
+    "name": "Nom *",
+    "email": "Email *",
+    "subject": "Sujet",
+    "message": "Message *",
+    "sendMessage": "Envoyer le Message",
+    "contactInfo": "Informations de Contact",
+    "followZoe": "Suivre Zoe",
+    "subjects": {
+      "select": "Veuillez sélectionner",
+      "general": "Demande Générale",
+      "event": "Demande d'Événement",
+      "media": "Contact Média",
+      "rights": "Droits d'Auteur",
+      "other": "Autre"
+    },
+    "success": "Message envoyé !",
+    "successDetail": "Merci pour votre message. Nous vous répondrons bientôt.",
+    "error": "Informations manquantes",
+    "errorDetail": "Veuillez remplir tous les champs requis."
+  },
+  "footer": {
+    "description": "Auteure primée de fiction littéraire explorant les connexions humaines et les émotions complexes.",
+    "quickLinks": "Liens Rapides",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Abonnez-vous pour recevoir des mises à jour sur les nouvelles sorties, les événements et du contenu exclusif.",
+      "placeholder": "Votre adresse email",
+      "subscribe": "S'abonner"
+    },
+    "rights": "Tous droits réservés."
   }
 }

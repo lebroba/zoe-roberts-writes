@@ -1,9 +1,10 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import BookCard from "@/components/BookCard";
+import { useTranslation } from 'react-i18next';
 
 const Books = () => {
+  const { t } = useTranslation();
   // Updated book data with only Power-Up Your Mind book
   const books = [
     {
@@ -21,9 +22,11 @@ const Books = () => {
     <Layout>
       <div className="bg-cream py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-playfair font-bold text-navy mb-8 text-center">Books by Zoe Roberts</h1>
+          <h1 className="text-4xl font-playfair font-bold text-navy mb-8 text-center">
+            {t('books.pageTitle')}
+          </h1>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-16">
-            Explore Zoe's literary works, from empowering children's books on growth mindset to compelling novels that weave together complex characters and emotional depth.
+            {t('books.description')}
           </p>
           
           <div className="space-y-16">
