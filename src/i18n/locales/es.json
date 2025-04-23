@@ -11,13 +11,28 @@
     "title": "ZOE ROBERTS",
     "subtitle": "Autora premiada, ayudando a niños a desarrollar una mentalidad de crecimiento",
     "exploreBooks": "Explorar Libros",
-    "aboutZoe": "Sobre Zoe"
+    "aboutZoe": "Sobre Zoe",
+    "empoweringMinds": "Empoderando Mentes",
+    "description": "Explora los inspiradores libros de la autora Zoe Roberts, donde las estrategias de mentalidad de crecimiento e historias cautivadoras ayudan a lectores de todas las edades a liberar su potencial."
   },
   "about": {
     "title": "Sobre Zoe",
     "description1": "Zoe Roberts es una autora premiada conocida por sus narrativas emocionalmente ricas y personajes complejos. Con formación en literatura y psicología, crea historias que exploran las profundidades de la conexión humana y los momentos tranquilos que definen nuestras vidas.",
     "description2": "Nacida y criada en el Noroeste del Pacífico, la escritura de Zoe está a menudo influenciada por los paisajes cambiantes de la región y su rica tradición literaria. Su trabajo ha sido reconocido con numerosos premios, incluyendo el Premio del Círculo de Críticos de Libros Nacional y el Premio PEN/Faulkner de Ficción.",
-    "readMore": "Leer Biografía Completa"
+    "readMore": "Leer Biografía Completa",
+    "literaryJourney": "Trayectoria Literaria",
+    "writingProcess": "Proceso de Escritura",
+    "personalLife": "Vida Personal",
+    "connect": "Conecta con Zoe"
+  },
+  "books": {
+    "title": "Libros de Zoe Roberts",
+    "description": "Explora las obras literarias de Zoe, desde libros infantiles sobre mentalidad de crecimiento hasta novelas que entrelazan personajes complejos y profundidad emocional.",
+    "featuredBooks": "Libros Destacados",
+    "featuredDescription": "Descubre las obras más celebradas de Zoe Roberts, desde guías de mentalidad de crecimiento para preadolescentes hasta novelas donde los personajes navegan las profundidades de la experiencia humana.",
+    "viewAll": "Ver Todos los Libros",
+    "purchaseNow": "Comprar Ahora",
+    "readMore": "Leer Más"
   },
   "newsletter": {
     "title": "Únete al Círculo de Lectura",

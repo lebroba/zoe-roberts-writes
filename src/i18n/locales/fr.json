@@ -11,13 +11,28 @@
     "title": "ZOE ROBERTS",
     "subtitle": "Auteure primée, aidant les enfants à développer un état d'esprit de croissance",
     "exploreBooks": "Découvrir les Livres",
-    "aboutZoe": "À propos de Zoe"
+    "aboutZoe": "À propos de Zoe",
+    "empoweringMinds": "Stimuler les Esprits",
+    "description": "Découvrez les livres inspirants de l'auteure Zoe Roberts, où les stratégies d'état d'esprit de croissance et les histoires captivantes aident les lecteurs de tous âges à libérer leur potentiel."
   },
   "about": {
     "title": "À propos de Zoe",
     "description1": "Zoe Roberts est une auteure primée connue pour ses récits émotionnellement riches et ses personnages complexes. Avec une formation en littérature et en psychologie, elle crée des histoires qui explorent les profondeurs de la connexion humaine et les moments calmes qui définissent nos vies.",
     "description2": "Née et élevée dans le Nord-Ouest Pacifique, l'écriture de Zoe est souvent influencée par les paysages changeants de la région et sa riche tradition littéraire. Son travail a été récompensé par de nombreux prix, notamment le National Book Critics Circle Award et le PEN/Faulkner Award for Fiction.",
-    "readMore": "Lire la Biographie Complète"
+    "readMore": "Lire la Biographie Complète",
+    "literaryJourney": "Parcours Littéraire",
+    "writingProcess": "Processus d'Écriture",
+    "personalLife": "Vie Personnelle",
+    "connect": "Connectez-vous avec Zoe"
+  },
+  "books": {
+    "title": "Livres de Zoe Roberts",
+    "description": "Découvrez les œuvres littéraires de Zoe, des livres pour enfants sur l'état d'esprit de croissance aux romans qui entremêlent des personnages complexes et une profondeur émotionnelle.",
+    "featuredBooks": "Livres en Vedette",
+    "featuredDescription": "Découvrez les œuvres les plus célèbres de Zoe Roberts, des guides d'état d'esprit de croissance pour préadolescents aux romans où les personnages naviguent dans les profondeurs de l'expérience humaine.",
+    "viewAll": "Voir Tous les Livres",
+    "purchaseNow": "Acheter Maintenant",
+    "readMore": "En Savoir Plus"
   },
   "newsletter": {
     "title": "Rejoignez le Cercle de Lecture",
