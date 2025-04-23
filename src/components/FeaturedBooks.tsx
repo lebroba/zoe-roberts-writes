@@ -1,20 +1,17 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
 
 const FeaturedBooks = () => {
-  const { t } = useTranslation();
-  
+  // Updated featured books with the children's book as the first item
   const featuredBooks = [
     {
       id: 1,
       title: "Power-Up Your Mind",
-      coverImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=500&q=80",
-      description: t('books.description'),
+      coverImage: "/lovable-uploads/95471984-914d-4073-a844-8c979dccba59.png",
+      description: "An empowering guide that helps children aged 8-12 develop a growth mindset to boost confidence and creativity.",
       year: "2025",
       purchaseLink: "https://a.co/d/52Rw8Dw"
     }
@@ -24,9 +21,9 @@ const FeaturedBooks = () => {
     <section className="py-20 bg-gradient-to-b from-white to-cream">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-heading text-center mx-auto">{t('books.featuredBooks')}</h2>
+          <h2 className="section-heading text-center mx-auto">Featured Books</h2>
           <p className="max-w-2xl mx-auto text-gray-700 mt-4">
-            {t('books.featuredDescription')}
+            Discover Zoe Roberts' most celebrated works, from growth mindset guides for tweens to novels where complex characters navigate the depths of human experience.
           </p>
         </div>
         
@@ -79,7 +76,7 @@ const FeaturedBooks = () => {
         
         <div className="text-center mt-16">
           <Button asChild className="bg-navy hover:bg-light-navy text-white px-8 py-6 rounded-full transition-all duration-300 transform hover:scale-105">
-            <Link to="/books" className="text-base">{t('books.viewAll')}</Link>
+            <Link to="/books" className="text-base">View All Books</Link>
           </Button>
         </div>
       </div>
