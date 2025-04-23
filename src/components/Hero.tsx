@@ -2,8 +2,10 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="relative bg-gradient-to-b from-cream to-white/90 py-16 md:py-24 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
@@ -25,7 +27,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Empowering <span className="text-gradient">Minds</span>
+              {t('hero.titlePart1')} <span className="text-gradient">{t('hero.titlePart2')}</span>
             </motion.h1>
             <motion.p 
               className="text-lg md:text-xl text-gray-700 mb-8 max-w-md mx-auto md:mx-0 leading-relaxed"
@@ -33,7 +35,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Explore the inspirational books of author Zoe Roberts, where growth mindset strategies and compelling stories help readers of all ages unlock their potential.
+              {t('hero.description')}
             </motion.p>
             
             <motion.div 
@@ -43,10 +45,10 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Button asChild className="bg-gradient-to-r from-navy to-light-navy hover:shadow-lg transition-all duration-300 text-white">
-                <Link to="/books">Explore Books</Link>
+                <Link to="/books">{t('books.viewAll')}</Link>
               </Button>
               <Button asChild variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white transition-all duration-300">
-                <Link to="/about">About Zoe</Link>
+                <Link to="/about">{t('nav.about')} Zoe</Link>
               </Button>
               <a 
                 href="https://a.co/d/52Rw8Dw" 
@@ -57,7 +59,7 @@ const Hero = () => {
               >
                 <img 
                   src="/lovable-uploads/6aa77f68-f503-4d06-b291-4d8c95afca3f.png" 
-                  alt="Available at Amazon" 
+                  alt={t('books.availableAtAmazon')}
                   className="w-[150px]"
                 />
               </a>
@@ -76,7 +78,7 @@ const Hero = () => {
               <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-gold/30 to-navy/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="relative overflow-hidden rounded-lg transform hover:scale-[1.01] transition-all duration-500">
                 <img 
-                  alt="Zoe Roberts" 
+                  alt="Zoe Roberts"
                   className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover" 
                   src="/lovable-uploads/f3473e03-4453-45cc-8bf3-cbdc7badfba1.jpg" 
                 />

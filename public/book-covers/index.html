@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language-Specific Book Covers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .language-selector {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .language-btn {
+      padding: 10px 15px;
+      margin: 0 5px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .language-btn:hover {
+      background-color: #f0f0f0;
+    }
+    .language-btn.active {
+      background-color: #0066cc;
+      color: white;
+      border-color: #0055aa;
+    }
+    .book-covers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .book-cover {
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .book-cover:hover {
+      transform: translateY(-5px);
+    }
+    .book-cover img {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    .book-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .language-indicator {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #0066cc;
+      color: white;
+      padding: 5px 8px;
+      font-size: 12px;
+      border-bottom-left-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Language-Specific Book Covers</h1>
+  
+  <div class="language-selector">
+    <button class="language-btn active" data-lang="en">English</button>
+    <button class="language-btn" data-lang="es">Español</button>
+    <button class="language-btn" data-lang="fr">Français</button>
+    <button class="language-btn" data-lang="it">Italiano</button>
+    <button class="language-btn" data-lang="pt">Português</button>
+  </div>
+  
+  <div class="book-covers">
+    <div class="book-cover">
+      <div style="position: relative;">
+        <img id="power-up-cover" src="/book-covers/en/power-up-your-mind.png" alt="Power-Up Your Mind book cover">
+        <div id="language-indicator" class="language-indicator">EN</div>
+      </div>
+      <div class="book-title">Power-Up Your Mind</div>
+      <div class="book-year">2023</div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const languageButtons = document.querySelectorAll('.language-btn');
+      const bookCover = document.getElementById('power-up-cover');
+      const languageIndicator = document.getElementById('language-indicator');
+      
+      languageButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          languageButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Get language code
+          const lang = this.getAttribute('data-lang');
+          
+          // Update book cover image
+          bookCover.src = `/book-covers/${lang}/power-up-your-mind.png`;
+          
+          // Update language indicator
+          languageIndicator.textContent = lang.toUpperCase();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

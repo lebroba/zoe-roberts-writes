@@ -2,6 +2,8 @@
 {
   "hero": {
     "title": "Autonomiser les Esprits",
+    "titlePart1": "Autonomiser les",
+    "titlePart2": "Esprits",
     "description": "Découvrez les livres inspirants de l'auteure Zoe Roberts, où les stratégies d'état d'esprit de croissance et les histoires captivantes aident les lecteurs de tous âges à libérer leur potentiel."
   },
   "nav": {
@@ -20,6 +22,73 @@
     "viewAll": "Voir Tous les Livres",
     "purchaseNow": "Acheter Maintenant",
     "availableAtAmazon": "Disponible sur Amazon"
+  },
+  "about": {
+    "title": "À propos de Zoe",
+    "bio1": "Zoe Roberts est une auteure primée connue pour ses récits émotionnellement riches et ses personnages complexes. Avec une formation en littérature et en psychologie, elle crée des histoires qui explorent les profondeurs de la connexion humaine et les moments silencieux qui définissent nos vies.",
+    "bio2": "Née et élevée dans le Nord-Ouest Pacifique, l'écriture de Zoe est souvent influencée par les paysages changeants de la région et sa riche tradition littéraire. Son travail a été reconnu par de nombreux prix, dont le Prix du Cercle National des Critiques Littéraires et le Prix PEN/Faulkner de Fiction.",
+    "readFullBio": "Lire la Biographie Complète",
+    "imageAlt": "Zoe Roberts écrivant à son bureau",
+    "pageTitle": "À propos de Zoe Roberts",
+    "literaryJourney": "Parcours Littéraire",
+    "writingProcess": "Processus d'Écriture",
+    "personalLife": "Vie Personnelle",
+    "connect": "Connectez-vous avec Zoe"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Vous avez une question, une demande ou vous souhaitez simplement échanger ? Contactez-nous en utilisant le formulaire ci-dessous.",
+    "form": {
+      "name": "Nom *",
+      "email": "E-mail *",
+      "subject": "Sujet",
+      "message": "Message *",
+      "selectSubject": "Veuillez sélectionner",
+      "generalInquiry": "Demande Générale",
+      "eventRequest": "Demande d'Événement",
+      "mediaInquiry": "Demande Média",
+      "rightsInquiry": "Demande de Droits",
+      "other": "Autre",
+      "sendMessage": "Envoyer le Message"
+    },
+    "info": {
+      "title": "Informations de Contact",
+      "email": "E-mail",
+      "agent": "Agent Littéraire",
+      "agentCompany": "Literary Representation, Inc.",
+      "address": "Adresse Postale"
+    },
+    "follow": "Suivez Zoe",
+    "toast": {
+      "missingInfo": {
+        "title": "Informations manquantes",
+        "description": "Veuillez remplir tous les champs obligatoires."
+      },
+      "success": {
+        "title": "Message envoyé !",
+        "description": "Merci pour votre message. Nous vous répondrons bientôt."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Reconnaissance Critique"
+  },
+  "newsletterBanner": {
+    "title": "Rejoignez le Cercle de Lecture",
+    "description": "Abonnez-vous à la newsletter de Zoe pour du contenu exclusif, un accès anticipé aux nouvelles parutions et des réflexions personnelles.",
+    "placeholder": "Votre adresse e-mail",
+    "subscribe": "S'abonner",
+    "privacy": "Vos informations ne seront jamais partagées. Désabonnez-vous à tout moment.",
+    "toast": {
+      "invalidEmail": {
+        "title": "E-mail invalide",
+        "description": "Veuillez entrer une adresse e-mail valide."
+      },
+      "success": {
+        "title": "Merci pour votre abonnement !",
+        "description": "Vous recevrez des mises à jour sur les nouvelles parutions et du contenu exclusif."
+      }
+    }
   },
   "footer": {
     "about": "Auteure primée de fiction littéraire explorant les connexions humaines et les émotions complexes.",

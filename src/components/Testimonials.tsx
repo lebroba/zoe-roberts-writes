@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const testimonials = [
   {
@@ -30,6 +31,8 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { t } = useTranslation();
+  
   // Split testimonials for top and bottom rows
   const topRowTestimonials = testimonials.slice(0, 3);
   const bottomRowTestimonials = testimonials.slice(3);
@@ -39,7 +42,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4">
-            Critical Acclaim
+            {t('testimonials.title')}
           </h2>
           <div className="w-20 h-1 bg-gold mx-auto"></div>
         </div>

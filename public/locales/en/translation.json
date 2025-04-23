@@ -2,6 +2,8 @@
 {
   "hero": {
     "title": "Empowering Minds",
+    "titlePart1": "Empowering",
+    "titlePart2": "Minds",
     "description": "Explore the inspirational books of author Zoe Roberts, where growth mindset strategies and compelling stories help readers of all ages unlock their potential."
   },
   "nav": {
@@ -20,6 +22,73 @@
     "viewAll": "View All Books",
     "purchaseNow": "Purchase Now",
     "availableAtAmazon": "Available at Amazon"
+  },
+  "about": {
+    "title": "About Zoe",
+    "bio1": "Zoe Roberts is an award-winning author known for her emotionally rich narratives and complex characters. With a background in literature and psychology, she crafts stories that explore the depths of human connection and the quiet moments that define our lives.",
+    "bio2": "Born and raised in the Pacific Northwest, Zoe's writing is often influenced by the region's moody landscapes and rich literary tradition. Her work has been recognized with numerous awards, including the National Book Critics Circle Award and the PEN/Faulkner Award for Fiction.",
+    "readFullBio": "Read Full Biography",
+    "imageAlt": "Zoe Roberts writing at her desk",
+    "pageTitle": "About Zoe Roberts",
+    "literaryJourney": "Literary Journey",
+    "writingProcess": "Writing Process",
+    "personalLife": "Personal Life",
+    "connect": "Connect with Zoe"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a question, request, or just want to connect? Reach out using the form below.",
+    "form": {
+      "name": "Name *",
+      "email": "Email *",
+      "subject": "Subject",
+      "message": "Message *",
+      "selectSubject": "Please select",
+      "generalInquiry": "General Inquiry",
+      "eventRequest": "Event Request",
+      "mediaInquiry": "Media Inquiry",
+      "rightsInquiry": "Rights Inquiry",
+      "other": "Other",
+      "sendMessage": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "agent": "Literary Agent",
+      "agentCompany": "Literary Representation, Inc.",
+      "address": "Mailing Address"
+    },
+    "follow": "Follow Zoe",
+    "toast": {
+      "missingInfo": {
+        "title": "Missing information",
+        "description": "Please fill out all required fields."
+      },
+      "success": {
+        "title": "Message sent!",
+        "description": "Thank you for your message. We'll get back to you soon."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Critical Acclaim"
+  },
+  "newsletterBanner": {
+    "title": "Join the Reading Circle",
+    "description": "Subscribe to Zoe's newsletter for exclusive content, early access to new releases, and personal reflections.",
+    "placeholder": "Your email address",
+    "subscribe": "Subscribe",
+    "privacy": "Your information will never be shared. Unsubscribe anytime.",
+    "toast": {
+      "invalidEmail": {
+        "title": "Invalid email",
+        "description": "Please enter a valid email address."
+      },
+      "success": {
+        "title": "Thank you for subscribing!",
+        "description": "You'll receive updates on new releases and exclusive content."
+      }
+    }
   },
   "footer": {
     "about": "Award-winning author of literary fiction exploring human connections and complex emotions.",

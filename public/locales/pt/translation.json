@@ -2,6 +2,8 @@
 {
   "hero": {
     "title": "Capacitando Mentes",
+    "titlePart1": "Capacitando",
+    "titlePart2": "Mentes",
     "description": "Explore os livros inspiradores da autora Zoe Roberts, onde estratégias de mentalidade de crescimento e histórias cativantes ajudam leitores de todas as idades a desbloquear seu potencial."
   },
   "nav": {
@@ -20,6 +22,73 @@
     "viewAll": "Ver Todos os Livros",
     "purchaseNow": "Comprar Agora",
     "availableAtAmazon": "Disponível na Amazon"
+  },
+  "about": {
+    "title": "Sobre Zoe",
+    "bio1": "Zoe Roberts é uma autora premiada conhecida por suas narrativas emocionalmente ricas e personagens complexos. Com formação em literatura e psicologia, ela cria histórias que exploram as profundidades da conexão humana e os momentos silenciosos que definem nossas vidas.",
+    "bio2": "Nascida e criada no Noroeste do Pacífico, a escrita de Zoe é frequentemente influenciada pelas paisagens variáveis da região e sua rica tradição literária. Seu trabalho foi reconhecido com numerosos prêmios, incluindo o Prêmio do Círculo Nacional de Críticos de Livros e o Prêmio PEN/Faulkner de Ficção.",
+    "readFullBio": "Ler Biografia Completa",
+    "imageAlt": "Zoe Roberts escrevendo em sua mesa",
+    "pageTitle": "Sobre Zoe Roberts",
+    "literaryJourney": "Jornada Literária",
+    "writingProcess": "Processo de Escrita",
+    "personalLife": "Vida Pessoal",
+    "connect": "Conecte-se com Zoe"
+  },
+  "contact": {
+    "title": "Contato",
+    "description": "Tem uma pergunta, solicitação ou apenas quer se conectar? Entre em contato usando o formulário abaixo.",
+    "form": {
+      "name": "Nome *",
+      "email": "E-mail *",
+      "subject": "Assunto",
+      "message": "Mensagem *",
+      "selectSubject": "Por favor selecione",
+      "generalInquiry": "Consulta Geral",
+      "eventRequest": "Solicitação de Evento",
+      "mediaInquiry": "Consulta de Mídia",
+      "rightsInquiry": "Consulta de Direitos",
+      "other": "Outro",
+      "sendMessage": "Enviar Mensagem"
+    },
+    "info": {
+      "title": "Informações de Contato",
+      "email": "E-mail",
+      "agent": "Agente Literário",
+      "agentCompany": "Literary Representation, Inc.",
+      "address": "Endereço Postal"
+    },
+    "follow": "Siga Zoe",
+    "toast": {
+      "missingInfo": {
+        "title": "Informações faltando",
+        "description": "Por favor, preencha todos os campos obrigatórios."
+      },
+      "success": {
+        "title": "Mensagem enviada!",
+        "description": "Obrigado pela sua mensagem. Entraremos em contato em breve."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Reconhecimento Crítico"
+  },
+  "newsletterBanner": {
+    "title": "Junte-se ao Círculo de Leitura",
+    "description": "Inscreva-se na newsletter de Zoe para conteúdo exclusivo, acesso antecipado a novos lançamentos e reflexões pessoais.",
+    "placeholder": "Seu endereço de e-mail",
+    "subscribe": "Inscrever-se",
+    "privacy": "Suas informações nunca serão compartilhadas. Cancele a inscrição a qualquer momento.",
+    "toast": {
+      "invalidEmail": {
+        "title": "E-mail inválido",
+        "description": "Por favor, insira um endereço de e-mail válido."
+      },
+      "success": {
+        "title": "Obrigado por se inscrever!",
+        "description": "Você receberá atualizações sobre novos lançamentos e conteúdo exclusivo."
+      }
+    }
   },
   "footer": {
     "about": "Autora premiada de ficção literária explorando conexões humanas e emoções complexas.",

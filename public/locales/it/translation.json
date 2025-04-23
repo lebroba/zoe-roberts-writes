@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "title": "Potenziare le Menti",
+    "titlePart1": "Potenziare",
+    "titlePart2": "le Menti",
+    "description": "Esplora i libri ispiratori dell'autrice Zoe Roberts, dove strategie di mentalità di crescita e storie avvincenti aiutano i lettori di tutte le età a sbloccare il loro potenziale."
+  },
+  "nav": {
+    "home": "Home",
+    "books": "Libri",
+    "about": "Chi Sono",
+    "freebies": "Omaggi",
+    "contact": "Contatti"
+  },
+  "books": {
+    "title": "Libri di Zoe Roberts",
+    "description": "Scopri le opere letterarie di Zoe, dai libri per bambini che promuovono la mentalità di crescita ai romanzi avvincenti che intrecciano personaggi complessi e profondità emotiva.",
+    "featuredTitle": "Libri in Evidenza",
+    "featuredDescription": "Scopri le opere più celebrate di Zoe Roberts, dalle guide sulla mentalità di crescita per preadolescenti ai romanzi in cui personaggi complessi esplorano le profondità dell'esperienza umana.",
+    "readMore": "Leggi di Più",
+    "viewAll": "Vedi Tutti i Libri",
+    "purchaseNow": "Acquista Ora",
+    "availableAtAmazon": "Disponibile su Amazon"
+  },
+  "about": {
+    "title": "Chi è Zoe",
+    "bio1": "Zoe Roberts è un'autrice pluripremiata nota per le sue narrazioni emotivamente ricche e i personaggi complessi. Con un background in letteratura e psicologia, crea storie che esplorano le profondità delle connessioni umane e i momenti silenziosi che definiscono le nostre vite.",
+    "bio2": "Nata e cresciuta nel Pacifico nord-occidentale, la scrittura di Zoe è spesso influenzata dai paesaggi malinconici della regione e dalla sua ricca tradizione letteraria. Il suo lavoro è stato riconosciuto con numerosi premi, tra cui il National Book Critics Circle Award e il PEN/Faulkner Award for Fiction.",
+    "readFullBio": "Leggi la Biografia Completa",
+    "imageAlt": "Zoe Roberts che scrive alla sua scrivania",
+    "pageTitle": "Chi è Zoe Roberts",
+    "literaryJourney": "Percorso Letterario",
+    "writingProcess": "Processo di Scrittura",
+    "personalLife": "Vita Personale",
+    "connect": "Connettiti con Zoe"
+  },
+  "contact": {
+    "title": "Contatti",
+    "description": "Hai una domanda, una richiesta o vuoi semplicemente connetterti? Contattaci utilizzando il modulo qui sotto.",
+    "form": {
+      "name": "Nome *",
+      "email": "Email *",
+      "subject": "Oggetto",
+      "message": "Messaggio *",
+      "selectSubject": "Seleziona",
+      "generalInquiry": "Richiesta Generale",
+      "eventRequest": "Richiesta Evento",
+      "mediaInquiry": "Richiesta Media",
+      "rightsInquiry": "Richiesta Diritti",
+      "other": "Altro",
+      "sendMessage": "Invia Messaggio"
+    },
+    "info": {
+      "title": "Informazioni di Contatto",
+      "email": "Email",
+      "agent": "Agente Letterario",
+      "agentCompany": "Literary Representation, Inc.",
+      "address": "Indirizzo Postale"
+    },
+    "follow": "Segui Zoe",
+    "toast": {
+      "missingInfo": {
+        "title": "Informazioni mancanti",
+        "description": "Compila tutti i campi obbligatori."
+      },
+      "success": {
+        "title": "Messaggio inviato!",
+        "description": "Grazie per il tuo messaggio. Ti risponderemo presto."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Riconoscimenti della Critica"
+  },
+  "newsletterBanner": {
+    "title": "Unisciti al Circolo di Lettura",
+    "description": "Iscriviti alla newsletter di Zoe per contenuti esclusivi, accesso anticipato alle nuove uscite e riflessioni personali.",
+    "placeholder": "Il tuo indirizzo email",
+    "subscribe": "Iscriviti",
+    "privacy": "Le tue informazioni non saranno mai condivise. Cancellati quando vuoi.",
+    "toast": {
+      "invalidEmail": {
+        "title": "Email non valida",
+        "description": "Inserisci un indirizzo email valido."
+      },
+      "success": {
+        "title": "Grazie per l'iscrizione!",
+        "description": "Riceverai aggiornamenti sulle nuove uscite e contenuti esclusivi."
+      }
+    }
+  },
+  "footer": {
+    "about": "Autrice pluripremiata di narrativa letteraria che esplora le connessioni umane e le emozioni complesse.",
+    "quickLinks": "Link Rapidi",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Iscriviti per ricevere aggiornamenti su nuove uscite, eventi e contenuti esclusivi.",
+      "placeholder": "Il tuo indirizzo email",
+      "subscribe": "Iscriviti"
+    },
+    "rights": "Tutti i diritti riservati."
+  }
+}

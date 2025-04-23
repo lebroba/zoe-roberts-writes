@@ -19,59 +19,65 @@ const Navbar = () => {
   const menuItems = [
     { path: '/', label: t('nav.home') },
     { path: '/books', label: t('nav.books') },
-    { path: '/about', label: t('nav.about') },
     { path: '/freebies', label: t('nav.freebies') },
+    { path: '/about', label: t('nav.about') },
     { path: '/contact', label: t('nav.contact') }
   ];
 
   return (
-    <header className="bg-white border-b border-gray-200">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-playfair font-bold text-navy">
-          Zoe Roberts
+    <header className="bg-cream">
+      {/* Logo centered */}
+      <div className="container mx-auto py-6 text-center">
+        <Link to="/" className="text-5xl font-playfair font-bold text-navy inline-block">
+          ZOE ROBERTS
         </Link>
-
-        <nav className="hidden md:flex items-center space-x-6">
-          {menuItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="text-gray-700 hover:text-navy transition-colors"
+      </div>
+      
+      {/* Navigation centered */}
+      <div className="border-t border-b border-gray-200">
+        <div className="container mx-auto">
+          <div className="flex justify-between items-center px-4 py-3 md:hidden">
+            <LanguageSwitcher />
+            <button
+              onClick={toggleMenu}
+              className="text-gray-600 hover:text-navy focus:outline-none"
+              aria-label="Toggle menu"
             >
-              {item.label}
-            </Link>
-          ))}
-          <LanguageSwitcher />
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <LanguageSwitcher />
-          <button
-            onClick={toggleMenu}
-            className="md:hidden text-gray-600 hover:text-navy focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <div
-          className={`md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 z-10 ${
-            isMenuOpen ? 'block' : 'hidden'
-          }`}
-        >
-          <div className="px-4 py-4 flex flex-col space-y-4">
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+          
+          <nav className="hidden md:flex justify-center items-center space-x-10 py-3">
             {menuItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="text-gray-700 hover:text-navy transition-colors block py-2"
-                onClick={closeMenu}
+                className="text-gray-700 hover:text-navy transition-colors uppercase font-medium"
               >
                 {item.label}
               </Link>
             ))}
+            <LanguageSwitcher />
+          </nav>
+          
+          {/* Mobile Menu */}
+          <div
+            className={`md:hidden ${
+              isMenuOpen ? 'block' : 'hidden'
+            }`}
+          >
+            <div className="px-4 py-4 flex flex-col space-y-4 border-t border-gray-200">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="text-gray-700 hover:text-navy transition-colors block py-2 text-center"
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

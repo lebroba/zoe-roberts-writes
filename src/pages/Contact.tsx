@@ -4,9 +4,11 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,8 +27,8 @@ const Contact = () => {
     // Validate form
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: "Missing information",
-        description: "Please fill out all required fields.",
+        title: t('contact.toast.missingInfo.title'),
+        description: t('contact.toast.missingInfo.description'),
         variant: "destructive"
       });
       return;
@@ -34,8 +36,8 @@ const Contact = () => {
     
     // In a real application, this would send the data to a server
     toast({
-      title: "Message sent!",
-      description: "Thank you for your message. We'll get back to you soon.",
+      title: t('contact.toast.success.title'),
+      description: t('contact.toast.success.description'),
     });
     
     // Reset form
@@ -51,9 +53,9 @@ const Contact = () => {
     <Layout>
       <div className="bg-cream py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-playfair font-bold text-navy mb-8 text-center">Contact</h1>
+          <h1 className="text-4xl font-playfair font-bold text-navy mb-8 text-center">{t('contact.title')}</h1>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-16">
-            Have a question, request, or just want to connect? Reach out using the form below.
+            {t('contact.description')}
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -61,7 +63,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name *</label>
+                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">{t('contact.form.name')}</label>
                     <input
                       type="text"
                       id="name"
@@ -73,7 +75,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email *</label>
+                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">{t('contact.form.email')}</label>
                     <input
                       type="email"
                       id="email"
@@ -87,7 +89,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">Subject</label>
+                  <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">{t('contact.form.subject')}</label>
                   <select
                     id="subject"
                     name="subject"
@@ -95,17 +97,17 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                   >
-                    <option value="">Please select</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="event">Event Request</option>
-                    <option value="media">Media Inquiry</option>
-                    <option value="rights">Rights Inquiry</option>
-                    <option value="other">Other</option>
+                    <option value="">{t('contact.form.selectSubject')}</option>
+                    <option value="general">{t('contact.form.generalInquiry')}</option>
+                    <option value="event">{t('contact.form.eventRequest')}</option>
+                    <option value="media">{t('contact.form.mediaInquiry')}</option>
+                    <option value="rights">{t('contact.form.rightsInquiry')}</option>
+                    <option value="other">{t('contact.form.other')}</option>
                   </select>
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message *</label>
+                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">{t('contact.form.message')}</label>
                   <textarea
                     id="message"
                     name="message"
@@ -118,20 +120,20 @@ const Contact = () => {
                 </div>
                 
                 <Button type="submit" className="bg-navy hover:bg-light-navy text-white px-6">
-                  Send Message
+                  {t('contact.form.sendMessage')}
                 </Button>
               </form>
             </div>
             
             <div>
               <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-                <h2 className="text-xl font-playfair font-bold text-navy mb-4">Contact Information</h2>
+                <h2 className="text-xl font-playfair font-bold text-navy mb-4">{t('contact.info.title')}</h2>
                 
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <Mail className="h-5 w-5 text-gold mr-3 mt-1" />
                     <div>
-                      <p className="font-medium">Email</p>
+                      <p className="font-medium">{t('contact.info.email')}</p>
                       <a href="mailto:contact@zoeroberts.com" className="text-navy hover:text-gold transition-colors">contact@zoeroberts.com</a>
                     </div>
                   </div>
@@ -139,8 +141,8 @@ const Contact = () => {
                   <div className="flex items-start">
                     <Phone className="h-5 w-5 text-gold mr-3 mt-1" />
                     <div>
-                      <p className="font-medium">Literary Agent</p>
-                      <p>Literary Representation, Inc.</p>
+                      <p className="font-medium">{t('contact.info.agent')}</p>
+                      <p>{t('contact.info.agentCompany')}</p>
                       <a href="tel:+12125551234" className="text-navy hover:text-gold transition-colors">+1 (212) 555-1234</a>
                     </div>
                   </div>
@@ -148,7 +150,7 @@ const Contact = () => {
                   <div className="flex items-start">
                     <MapPin className="h-5 w-5 text-gold mr-3 mt-1" />
                     <div>
-                      <p className="font-medium">Mailing Address</p>
+                      <p className="font-medium">{t('contact.info.address')}</p>
                       <p>P.O. Box 1234<br/>Seattle, WA 98101<br/>United States</p>
                     </div>
                   </div>
@@ -156,7 +158,7 @@ const Contact = () => {
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h2 className="text-xl font-playfair font-bold text-navy mb-4">Follow Zoe</h2>
+                <h2 className="text-xl font-playfair font-bold text-navy mb-4">{t('contact.follow')}</h2>
                 
                 <div className="flex gap-4">
                   <a 
