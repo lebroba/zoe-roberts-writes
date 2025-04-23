@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { getAmazonLogoByLanguage } from "@/lib/amazonLogos";
 
 const Hero = () => {
   const { t, i18n } = useTranslation();
@@ -57,11 +58,11 @@ const Hero = () => {
                 className="inline-block"
                 aria-label="Available at Amazon"
               >
-                <img 
-                  src="/lovable-uploads/6aa77f68-f503-4d06-b291-4d8c95afca3f.png" 
-                  alt={t('books.availableAtAmazon')}
-                  className="w-[150px]"
-                />
+                        <img
+                          src={getAmazonLogoByLanguage()}
+                          alt={t('books.availableAtAmazon')}
+                          className="max-w-[150px]"
+                        />
               </a>
             </motion.div>
             

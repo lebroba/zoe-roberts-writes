@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import LanguageAwareBookCover from "./LanguageAwareBookCover";
+import { getAmazonLogoByLanguage } from "@/lib/amazonLogos";
 
 const FeaturedBooks = () => {
   const { t } = useTranslation();
@@ -58,8 +59,8 @@ const FeaturedBooks = () => {
                         className="inline-block"
                         aria-label="Available at Amazon"
                       >
-                        <img 
-                          src="/lovable-uploads/6aa77f68-f503-4d06-b291-4d8c95afca3f.png" 
+                        <img
+                          src={getAmazonLogoByLanguage()}
                           alt={t('books.availableAtAmazon')}
                           className="min-w-[90px] max-w-[200px]"
                         />

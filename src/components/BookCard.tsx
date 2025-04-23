@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import LanguageAwareBookCover from "./LanguageAwareBookCover";
+import { getAmazonLogoByLanguage } from "@/lib/amazonLogos";
 
 interface BookCardProps {
   title: string;
@@ -49,8 +50,8 @@ const BookCard: React.FC<BookCardProps> = ({
               className="inline-block"
               aria-label="Available at Amazon"
             >
-              <img 
-                src="/lovable-uploads/6aa77f68-f503-4d06-b291-4d8c95afca3f.png" 
+              <img
+                src={getAmazonLogoByLanguage()}
                 alt={t('books.availableAtAmazon')}
                 className="min-w-[90px] max-w-[200px]"
               />
