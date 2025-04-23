@@ -1,0 +1,29 @@
+
+{
+  "nav": {
+    "home": "Início",
+    "books": "Livros",
+    "freebies": "Brindes",
+    "about": "Sobre",
+    "contact": "Contato & Social"
+  },
+  "hero": {
+    "title": "ZOE ROBERTS",
+    "subtitle": "Autora premiada, ajudando crianças a desenvolver uma mentalidade de crescimento",
+    "exploreBooks": "Explorar Livros",
+    "aboutZoe": "Sobre Zoe"
+  },
+  "about": {
+    "title": "Sobre Zoe",
+    "description1": "Zoe Roberts é uma autora premiada conhecida por suas narrativas emocionalmente ricas e personagens complexos. Com formação em literatura e psicologia, ela cria histórias que exploram as profundezas da conexão humana e os momentos tranquilos que definem nossas vidas.",
+    "description2": "Nascida e criada no Noroeste do Pacífico, a escrita de Zoe é frequentemente influenciada pelas paisagens variadas da região e sua rica tradição literária. Seu trabalho foi reconhecido com vários prêmios, incluindo o National Book Critics Circle Award e o PEN/Faulkner Award for Fiction.",
+    "readMore": "Ler Biografia Completa"
+  },
+  "newsletter": {
+    "title": "Junte-se ao Círculo de Leitura",
+    "description": "Inscreva-se na newsletter da Zoe para conteúdo exclusivo, acesso antecipado a novos lançamentos e reflexões pessoais.",
+    "placeholder": "Seu endereço de email",
+    "subscribe": "Inscrever-se",
+    "privacy": "Suas informações nunca serão compartilhadas. Cancele quando quiser."
+  }
+}

@@ -1,0 +1,29 @@
+
+{
+  "nav": {
+    "home": "Home",
+    "books": "Books",
+    "freebies": "Freebies",
+    "about": "About",
+    "contact": "Contact & Social"
+  },
+  "hero": {
+    "title": "ZOE ROBERTS",
+    "subtitle": "Award-winning author, helping children develop a growth mindset",
+    "exploreBooks": "Explore Books",
+    "aboutZoe": "About Zoe"
+  },
+  "about": {
+    "title": "About Zoe",
+    "description1": "Zoe Roberts is an award-winning author known for her emotionally rich narratives and complex characters. With a background in literature and psychology, she crafts stories that explore the depths of human connection and the quiet moments that define our lives.",
+    "description2": "Born and raised in the Pacific Northwest, Zoe's writing is often influenced by the region's moody landscapes and rich literary tradition. Her work has been recognized with numerous awards, including the National Book Critics Circle Award and the PEN/Faulkner Award for Fiction.",
+    "readMore": "Read Full Biography"
+  },
+  "newsletter": {
+    "title": "Join the Reading Circle",
+    "description": "Subscribe to Zoe's newsletter for exclusive content, early access to new releases, and personal reflections.",
+    "placeholder": "Your email address",
+    "subscribe": "Subscribe",
+    "privacy": "Your information will never be shared. Unsubscribe anytime."
+  }
+}

@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Freebies from "./pages/Freebies";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import "./i18n/config";
 
 const queryClient = new QueryClient();
 
