@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -9,14 +10,13 @@ import { getAmazonLogoByLanguage } from "@/lib/amazonLogos";
 
 const FeaturedBooks = () => {
   const { t } = useTranslation();
-  // Updated featured books with the children's book as the first item
   const featuredBooks = [
     {
       id: 1,
       bookId: "power-up-your-mind",
       title: "Power-Up Your Mind",
       coverImage: "/lovable-uploads/95471984-914d-4073-a844-8c979dccba59.png",
-      description: "An empowering guide that helps children aged 8-12 develop a growth mindset to boost confidence and creativity.",
+      description: t('books.powerUpYourMindDescription'),
       year: "2025",
       purchaseLink: "https://a.co/d/52Rw8Dw"
     }

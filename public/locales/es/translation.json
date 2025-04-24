@@ -1,4 +1,3 @@
-
 {
   "hero": {
     "title": "Empoderando Mentes",
@@ -21,7 +20,8 @@
     "readMore": "Leer Más",
     "viewAll": "Ver Todos los Libros",
     "purchaseNow": "Comprar Ahora",
-    "availableAtAmazon": "Disponible en Amazon"
+    "availableAtAmazon": "Disponible en Amazon",
+    "powerUpYourMindDescription": "Una guía inspiradora que ayuda a niños de 8 a 12 años a desarrollar una mentalidad de crecimiento para aumentar la confianza y la creatividad."
   },
   "about": {
     "title": "Sobre Zoe",

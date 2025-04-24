@@ -1,4 +1,3 @@
-
 {
   "hero": {
     "title": "Empowering Minds",
@@ -21,7 +20,8 @@
     "readMore": "Read More",
     "viewAll": "View All Books",
     "purchaseNow": "Purchase Now",
-    "availableAtAmazon": "Available at Amazon"
+    "availableAtAmazon": "Available at Amazon",
+    "powerUpYourMindDescription": "An empowering guide that helps children aged 8-12 develop a growth mindset to boost confidence and creativity."
   },
   "about": {
     "title": "About Zoe",

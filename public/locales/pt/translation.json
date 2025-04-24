@@ -1,4 +1,3 @@
-
 {
   "hero": {
     "title": "Capacitando Mentes",
@@ -21,7 +20,8 @@
     "readMore": "Leia Mais",
     "viewAll": "Ver Todos os Livros",
     "purchaseNow": "Comprar Agora",
-    "availableAtAmazon": "Disponível na Amazon"
+    "availableAtAmazon": "Disponível na Amazon",
+    "powerUpYourMindDescription": "Um guia inspirador que ajuda crianças de 8 a 12 anos a desenvolver uma mentalidade de crescimento para aumentar a confiança e a criatividade."
   },
   "about": {
     "title": "Sobre Zoe",
