@@ -51,7 +51,7 @@ const FeaturedBooks = () => {
                       altText={`${book.title} book cover`}
                       className="w-full max-w-[200px] transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="mt-4 flex justify-center">
+                    <div className="mt-4 flex justify-center pb-[10px]">
                       <a 
                         href={book.purchaseLink} 
                         target="_blank" 
@@ -62,7 +62,7 @@ const FeaturedBooks = () => {
                         <img
                           src={getAmazonLogoByLanguage()}
                           alt={t('books.availableAtAmazon')}
-                          className="min-w-[90px] max-w-[200px]"
+                          className="min-w-[72px] max-w-[160px]"
                         />
                       </a>
                     </div>
