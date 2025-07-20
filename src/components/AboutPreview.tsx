@@ -48,7 +48,7 @@ const AboutPreview = () => {
             <div className="relative group">
               <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-gold/30 to-navy/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="relative overflow-hidden rounded-lg transform hover:scale-[1.01] transition-all duration-500">
-                <img alt={t('about.imageAlt')} className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover" src="/lovable-uploads/01348dfc-206d-4c88-9800-82a3c06ba3f5.png" />
+                <img alt={t('about.imageAlt')} className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover" src="/lovable-uploads/8f8badf9-8058-4f2f-a925-b2707eb0aae9.png" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
