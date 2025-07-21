@@ -22,11 +22,8 @@ const AboutPreview = () => {
           once: true
         }}>
             <h2 className="section-heading">{t('about.title')}</h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-gray-700 mb-8 leading-relaxed whitespace-pre-line">
               {t('about.bio1')}
-            </p>
-            <p className="text-gray-700 mb-8 leading-relaxed">
-              {t('about.bio2')}
             </p>
             <Button asChild className="bg-gradient-to-r from-navy to-light-navy hover:shadow-lg transition-all duration-300 text-white">
               <Link to="/about">{t('about.readFullBio')}</Link>
