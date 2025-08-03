@@ -70,7 +70,27 @@
     }
   },
   "testimonials": {
-    "title": "Reconnaissance Critique"
+    "title": "Reconnaissance Critique",
+    "testimonial1": {
+      "quote": "Un changement révolutionnaire pour les préadolescents et leurs parents ! En tant que parent et conseiller scolaire, j'attendais un livre comme Power-Up Your Mind. Il s'adresse directement aux préadolescents d'une manière engageante, encourageante et surtout - autonomisante. Les stratégies sont adaptées à l'âge, faciles à mettre en œuvre et pleines de cœur. J'ai particulièrement aimé comment il recadre l'échec comme faisant partie de l'apprentissage. Je le recommanderai à toutes les familles avec lesquelles je travaille !",
+      "author": "Melissa J. Klein, M.Ed., Conseillère Scolaire et Mère de Deux Enfants"
+    },
+    "testimonial2": {
+      "quote": "Chaque préadolescent mérite ce livre sur son étagère. C'est plus qu'un guide, c'est une boîte à outils de confiance. Ma fille l'a dévoré et a immédiatement commencé à changer son langage de 'Je ne suis pas douée pour ça' à 'J'apprends encore'. La voir commencer à croire en sa capacité à grandir a été l'une des expériences les plus gratifiantes de ma vie. Ce livre donne aux enfants le pouvoir de réécrire leur histoire intérieure.",
+      "author": "Dana K., Mère d'une enfant de 10 ans"
+    },
+    "testimonial3": {
+      "quote": "Une ressource essentielle pour favoriser la résilience et la détermination. Power-Up Your Mind capture l'essence de ce dont les préadolescents ont besoin aujourd'hui : confiance, compassion envers eux-mêmes et courage de réessayer. Les activités sont amusantes et pratiques, et le vocabulaire de l'état d'esprit de croissance est brillant pour aider les enfants à intérioriser de nouvelles habitudes de pensée puissantes. Je prévois d'utiliser ce livre dans mes groupes d'apprentissage socio-émotionnel à l'avenir.",
+      "author": "Dr. Alex Raines, PsyD, Psychologue pour Enfants"
+    },
+    "testimonial4": {
+      "quote": "Une approche fraîche et autonomisante de l'éducation à l'état d'esprit. Ce livre n'enseigne pas seulement des concepts, il transforme la façon dont les préadolescents pensent à l'apprentissage et aux erreurs. Mon fils a adoré le thème des super-héros, et j'ai adoré comment cela nous a naturellement menés à des conversations significatives. Si vous êtes parent, enseignant ou mentor qui veut aider les enfants à embrasser les défis et à croire en eux-mêmes, ce livre est un trésor.",
+      "author": "Jessica Morales, Enseignante de 5e Année et Mentore Jeunesse"
+    },
+    "testimonial5": {
+      "quote": "Enfin ! Un livre sur l'état d'esprit de croissance que les préadolescents veulent vraiment lire ! En tant qu'éducateur, j'ai vu ma part de livres d'« auto-assistance » pour enfants, mais Power-Up Your Mind se démarque parce qu'il comprend vraiment son public. Il est coloré, positif et ne parle jamais de haut aux enfants. La section sur la fixation d'objectifs et l'auto-conversation vaut le prix à elle seule. Hautement recommandé pour les salles de classe, les familles et tous ceux qui croient en la construction d'esprits jeunes forts et confiants.",
+      "author": "Robert T. Fields, MS, Psychologue de l'Éducation"
+    }
   },
   "newsletterBanner": {
     "title": "Rejoignez le Cercle de Lecture",
@@ -99,5 +119,55 @@
       "subscribe": "S'abonner"
     },
     "rights": "Tous droits réservés."
+  },
+  "freebies": {
+    "title": "Cadeaux",
+    "description": "Explorez et téléchargez du contenu exclusif de Zoe Roberts, y compris des chapitres d'échantillon, des ressources d'écriture, des pages de journal et des feuilles d'activités.",
+    "featuredTitle": "Téléchargez le Chapitre 1 du \"Pouvoir de l'Habitude\"",
+    "featuredDescription": "Mon livre #1 bestseller du New York Times sur comment construire de bonnes habitudes et briser les mauvaises. Entrez votre e-mail ci-dessous pour recevoir le premier chapitre complètement gratuit.",
+    "emailSafety": "Votre e-mail est en sécurité avec nous. Nous ne partagerons jamais vos informations.",
+    "freeResourcesTitle": "Ressources Gratuites",
+    "freeResourcesDescription": "Parcourez ces ressources téléchargeables gratuites pour améliorer votre expérience de lecture et goûter au monde littéraire de Zoe.",
+    "downloadFreeChapter": "Télécharger le Chapitre Gratuit",
+    "processing": "Traitement en cours...",
+    "download": "Télécharger",
+    "enterEmail": "Entrez votre e-mail pour recevoir le lien de téléchargement",
+    "yourEmailAddress": "Votre adresse e-mail",
+    "invalidEmail": "E-mail invalide",
+    "invalidEmailDescription": "Veuillez entrer une adresse e-mail valide.",
+    "success": "Succès !",
+    "checkEmailForDownload": "Vérifiez votre e-mail pour le lien de téléchargement de \"{title}\".",
+    "items": {
+      "sampleChapter": {
+        "title": "Chapitre d'Échantillon : L'Écho du Silence",
+        "description": "Lisez le premier chapitre du dernier roman de Zoe et plongez-vous dans le monde d'Eliza Wilkes alors qu'elle découvre un journal mystérieux dans le grenier de sa grand-mère.",
+        "type": "Chapitre d'Échantillon"
+      },
+      "characterWorksheet": {
+        "title": "Feuille de Travail de Développement de Personnage",
+        "description": "Une feuille de travail utilisée par Zoe lors du développement de personnages complexes pour ses romans. Parfaite pour les écrivains aspirants cherchant à étoffer leurs propres personnages.",
+        "type": "Ressource d'Écriture"
+      },
+      "journalPages": {
+        "title": "Pages de Journal des Jardins Littéraires",
+        "description": "De belles pages de journal inspirées par les jardins décrits dans 'Murmures dans le Jardin'. Parfaites pour noter vos pensées ou vos plans de jardin.",
+        "type": "Ressource de Journal"
+      },
+      "activitySheets": {
+        "title": "Feuilles d'Activités pour Enfants",
+        "description": "Feuilles d'activités amusantes et éducatives inspirées par le livre pour enfants de Zoe 'Les Aventuriers du Clair de Lune'. Comprend des pages à colorier, des mots croisés et plus encore.",
+        "type": "Feuilles d'Activités"
+      },
+      "exclusivePreview": {
+        "title": "Le Collectionneur de Souvenirs : Aperçu Exclusif",
+        "description": "Un aperçu exclusif du prochain roman de Zoe, non disponible ailleurs. Goûtez à ce qui vient de votre auteure préférée.",
+        "type": "Aperçu Exclusif"
+      },
+      "discussionGuide": {
+        "title": "Guide de Discussion pour Lecteurs",
+        "description": "Un guide de discussion complet pour les clubs de lecture lisant 'La Fille du Gardien de Phare'. Comprend des questions stimulantes et une analyse thématique.",
+        "type": "Ressource de Club de Lecture"
+      }
+    }
   }
 }

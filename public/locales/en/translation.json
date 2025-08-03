@@ -70,7 +70,27 @@
     }
   },
   "testimonials": {
-    "title": "Critical Acclaim"
+    "title": "Critical Acclaim",
+    "testimonial1": {
+      "quote": "A game-changer for tweens and their parents! As a parent and school counselor, I've been waiting for a book just like Power-Up Your Mind. It speaks directly to tweens in a way that's engaging, encouraging, and most importantly - empowering. The strategies are age-appropriate, easy to implement, and filled with heart. I especially loved how it reframes failure as part of learning. I'll be recommending this to every family I work with!",
+      "author": "Melissa J. Klein, M.Ed., School Counselor and Parent of Two"
+    },
+    "testimonial2": {
+      "quote": "Every tween deserves this book on their shelf. This is more than a guide, it's a toolbox of confidence. My daughter devoured it and immediately started shifting her language from 'I'm not good at this' to 'I'm still learning.' Watching her begin to believe in her ability to grow has been one of the most rewarding experiences of my life. This book gives kids the power to rewrite their inner story.",
+      "author": "Dana K., Parent of a 10-year-old"
+    },
+    "testimonial3": {
+      "quote": "An essential resource for fostering resilience and grit. Power-Up Your Mind captures the essence of what tweens need today: confidence, compassion for themselves, and the courage to try again. The activities are fun and practical, and the growth mindset vocabulary is brilliant for helping kids internalize powerful new habits of thought. I plan to use this book in my social-emotional learning groups moving forward.",
+      "author": "Dr. Alex Raines, PsyD, Child Psychologist"
+    },
+    "testimonial4": {
+      "quote": "A fresh, empowering approach to mindset education. This book doesn't just teach concepts, it transforms how tweens think about learning and mistakes. My son loved the superhero theme, and I loved how naturally it led us into meaningful conversations. If you're a parent, teacher, or mentor who wants to help kids embrace challenges and believe in themselves, this book is a treasure.",
+      "author": "Jessica Morales, 5th Grade Teacher and Youth Mentor"
+    },
+    "testimonial5": {
+      "quote": "Finally! A growth mindset book that tweens actually want to read! As an educator, I've seen my fair share of 'self-help' books for kids, but Power-Up Your Mind stands out because it truly understands its audience. It's colorful, positive, and never talks down to kids. The section on goal-setting and self-talk is worth the price alone. Highly recommended for classrooms, families, and anyone who believes in building strong, confident young minds.",
+      "author": "Robert T. Fields, MS, Educational Psychologist"
+    }
   },
   "newsletterBanner": {
     "title": "Join the Reading Circle",
@@ -99,5 +119,55 @@
       "subscribe": "Subscribe"
     },
     "rights": "All rights reserved."
+  },
+  "freebies": {
+    "title": "Freebies",
+    "description": "Explore and download exclusive content from Zoe Roberts, including sample chapters, writing resources, journal pages, and activity sheets.",
+    "featuredTitle": "Download Chapter 1 of \"Power of Habit\"",
+    "featuredDescription": "My #1 New York Times bestselling book on how to build good habits and break bad ones. Enter your email below to receive the first chapter completely free.",
+    "emailSafety": "Your email is safe with us. We'll never share your information.",
+    "freeResourcesTitle": "Free Resources",
+    "freeResourcesDescription": "Browse through these free downloadable resources to enhance your reading experience and get a taste of Zoe's literary world.",
+    "downloadFreeChapter": "Download Free Chapter",
+    "processing": "Processing...",
+    "download": "Download",
+    "enterEmail": "Enter your email to receive the download link",
+    "yourEmailAddress": "Your email address",
+    "invalidEmail": "Invalid email",
+    "invalidEmailDescription": "Please enter a valid email address.",
+    "success": "Success!",
+    "checkEmailForDownload": "Check your email for the download link to \"{title}\".",
+    "items": {
+      "sampleChapter": {
+        "title": "Sample Chapter: The Echo of Silence",
+        "description": "Read the first chapter of Zoe's latest novel and immerse yourself in the world of Eliza Wilkes as she discovers a mysterious diary in her grandmother's attic.",
+        "type": "Sample Chapter"
+      },
+      "characterWorksheet": {
+        "title": "Character Development Worksheet",
+        "description": "A worksheet used by Zoe when developing complex characters for her novels. Perfect for aspiring writers looking to flesh out their own characters.",
+        "type": "Writing Resource"
+      },
+      "journalPages": {
+        "title": "Literary Gardens Journal Pages",
+        "description": "Beautiful journal pages inspired by the gardens described in 'Whispers in the Garden.' Perfect for journaling your thoughts or garden plans.",
+        "type": "Journal Resource"
+      },
+      "activitySheets": {
+        "title": "Children's Activity Sheets",
+        "description": "Fun and educational activity sheets inspired by Zoe's children's book 'The Moonlight Adventurers.' Includes coloring pages, word searches, and more.",
+        "type": "Activity Sheets"
+      },
+      "exclusivePreview": {
+        "title": "The Memory Collector: Exclusive Preview",
+        "description": "An exclusive sneak peek at Zoe's upcoming novel, not available anywhere else. Get a taste of what's coming next from your favorite author.",
+        "type": "Exclusive Preview"
+      },
+      "discussionGuide": {
+        "title": "Reader's Discussion Guide",
+        "description": "A comprehensive discussion guide for book clubs reading 'The Lighthouse Keeper's Daughter.' Includes thought-provoking questions and thematic analysis.",
+        "type": "Book Club Resource"
+      }
+    }
   }
 }

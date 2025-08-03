@@ -70,7 +70,27 @@
     }
   },
   "testimonials": {
-    "title": "Riconoscimenti della Critica"
+    "title": "Riconoscimenti della Critica",
+    "testimonial1": {
+      "quote": "Un cambiamento rivoluzionario per i preadolescenti e i loro genitori! Come genitore e consulente scolastico, stavo aspettando un libro come Power-Up Your Mind. Parla direttamente ai preadolescenti in un modo coinvolgente, incoraggiante e soprattutto - potenziante. Le strategie sono appropriate per l'età, facili da implementare e piene di cuore. Ho amato particolarmente come ridefinisce il fallimento come parte dell'apprendimento. Lo consiglierò a ogni famiglia con cui lavoro!",
+      "author": "Melissa J. Klein, M.Ed., Consulente Scolastica e Madre di Due"
+    },
+    "testimonial2": {
+      "quote": "Ogni preadolescente merita questo libro sul suo scaffale. Questo è più di una guida, è una cassetta degli attrezzi di fiducia. Mia figlia l'ha divorato e ha immediatamente iniziato a cambiare il suo linguaggio da 'Non sono brava in questo' a 'Sto ancora imparando'. Vederla iniziare a credere nella sua capacità di crescere è stata una delle esperienze più gratificanti della mia vita. Questo libro dà ai bambini il potere di riscrivere la loro storia interiore.",
+      "author": "Dana K., Madre di una bambina di 10 anni"
+    },
+    "testimonial3": {
+      "quote": "Una risorsa essenziale per favorire resilienza e grinta. Power-Up Your Mind cattura l'essenza di ciò di cui i preadolescenti hanno bisogno oggi: fiducia, compassione verso se stessi e il coraggio di riprovare. Le attività sono divertenti e pratiche, e il vocabolario della mentalità di crescita è brillante per aiutare i bambini a interiorizzare nuove abitudini di pensiero potenti. Prevedo di usare questo libro nei miei gruppi di apprendimento socio-emotivo in futuro.",
+      "author": "Dr. Alex Raines, PsyD, Psicologo Infantile"
+    },
+    "testimonial4": {
+      "quote": "Un approccio fresco e potenziante all'educazione della mentalità. Questo libro non insegna solo concetti, trasforma come i preadolescenti pensano all'apprendimento e agli errori. Mio figlio ha amato il tema dei supereroi, e io ho amato come naturalmente ci ha portato a conversazioni significative. Se sei un genitore, insegnante o mentore che vuole aiutare i bambini ad abbracciare le sfide e credere in se stessi, questo libro è un tesoro.",
+      "author": "Jessica Morales, Insegnante di 5a Elementare e Mentore Giovanile"
+    },
+    "testimonial5": {
+      "quote": "Finalmente! Un libro sulla mentalità di crescita che i preadolescenti vogliono davvero leggere! Come educatore, ho visto la mia parte di libri di 'auto-aiuto' per bambini, ma Power-Up Your Mind si distingue perché comprende davvero il suo pubblico. È colorato, positivo e non parla mai dall'alto ai bambini. La sezione sulla definizione degli obiettivi e l'auto-dialogo vale da sola il prezzo. Altamente raccomandato per aule, famiglie e chiunque creda nella costruzione di menti giovani forti e fiduciose.",
+      "author": "Robert T. Fields, MS, Psicologo dell'Educazione"
+    }
   },
   "newsletterBanner": {
     "title": "Unisciti al Circolo di Lettura",
@@ -99,5 +119,55 @@
       "subscribe": "Iscriviti"
     },
     "rights": "Tutti i diritti riservati."
+  },
+  "freebies": {
+    "title": "Omaggi",
+    "description": "Esplora e scarica contenuti esclusivi di Zoe Roberts, inclusi capitoli di esempio, risorse di scrittura, pagine di diario e fogli di attività.",
+    "featuredTitle": "Scarica il Capitolo 1 del \"Potere dell'Abitudine\"",
+    "featuredDescription": "Il mio libro #1 bestseller del New York Times su come costruire buone abitudini e rompere quelle cattive. Inserisci la tua email qui sotto per ricevere il primo capitolo completamente gratis.",
+    "emailSafety": "La tua email è al sicuro con noi. Non condivideremo mai le tue informazioni.",
+    "freeResourcesTitle": "Risorse Gratuite",
+    "freeResourcesDescription": "Sfoglia queste risorse scaricabili gratuite per migliorare la tua esperienza di lettura e assaggiare il mondo letterario di Zoe.",
+    "downloadFreeChapter": "Scarica Capitolo Gratuito",
+    "processing": "Elaborazione...",
+    "download": "Scarica",
+    "enterEmail": "Inserisci la tua email per ricevere il link di download",
+    "yourEmailAddress": "Il tuo indirizzo email",
+    "invalidEmail": "Email non valida",
+    "invalidEmailDescription": "Inserisci un indirizzo email valido.",
+    "success": "Successo!",
+    "checkEmailForDownload": "Controlla la tua email per il link di download di \"{title}\".",
+    "items": {
+      "sampleChapter": {
+        "title": "Capitolo di Esempio: L'Eco del Silenzio",
+        "description": "Leggi il primo capitolo dell'ultimo romanzo di Zoe e immergiti nel mondo di Eliza Wilkes mentre scopre un diario misterioso nella soffitta della nonna.",
+        "type": "Capitolo di Esempio"
+      },
+      "characterWorksheet": {
+        "title": "Foglio di Lavoro per lo Sviluppo del Personaggio",
+        "description": "Un foglio di lavoro usato da Zoe quando sviluppa personaggi complessi per i suoi romanzi. Perfetto per scrittori aspiranti che cercano di dare forma ai propri personaggi.",
+        "type": "Risorsa di Scrittura"
+      },
+      "journalPages": {
+        "title": "Pagine di Diario dei Giardini Letterari",
+        "description": "Belle pagine di diario ispirate ai giardini descritti in 'Sussurri nel Giardino'. Perfette per annotare i tuoi pensieri o piani per il giardino.",
+        "type": "Risorsa di Diario"
+      },
+      "activitySheets": {
+        "title": "Fogli di Attività per Bambini",
+        "description": "Fogli di attività divertenti ed educativi ispirati al libro per bambini di Zoe 'Gli Avventurieri della Luce Lunare'. Include pagine da colorare, cruciverba e altro ancora.",
+        "type": "Fogli di Attività"
+      },
+      "exclusivePreview": {
+        "title": "Il Collezionista di Ricordi: Anteprima Esclusiva",
+        "description": "Un'anteprima esclusiva del prossimo romanzo di Zoe, non disponibile altrove. Assaggia quello che arriva dalla tua autrice preferita.",
+        "type": "Anteprima Esclusiva"
+      },
+      "discussionGuide": {
+        "title": "Guida alla Discussione per Lettori",
+        "description": "Una guida alla discussione completa per i club del libro che leggono 'La Figlia del Guardiano del Faro'. Include domande stimolanti e analisi tematiche.",
+        "type": "Risorsa per Club del Libro"
+      }
+    }
   }
 }

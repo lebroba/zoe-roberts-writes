@@ -5,28 +5,28 @@ import { useTranslation } from "react-i18next";
 const testimonials = [
   {
     id: 1,
-    quote: "A game-changer for tweens and their parents! As a parent and school counselor, I've been waiting for a book just like Power-Up Your Mind. It speaks directly to tweens in a way that's engaging, encouraging, and most importantly - empowering. The strategies are age-appropriate, easy to implement, and filled with heart. I especially loved how it reframes failure as part of learning. I'll be recommending this to every family I work with!",
-    author: "Melissa J. Klein, M.Ed., School Counselor and Parent of Two",
+    quoteKey: "testimonials.testimonial1.quote",
+    authorKey: "testimonials.testimonial1.author",
   },
   {
     id: 2,
-    quote: "Every tween deserves this book on their shelf. This is more than a guide, it's a toolbox of confidence. My daughter devoured it and immediately started shifting her language from 'I'm not good at this' to 'I'm still learning.' Watching her begin to believe in her ability to grow has been one of the most rewarding experiences of my life. This book gives kids the power to rewrite their inner story.",
-    author: "Dana K., Parent of a 10-year-old",
+    quoteKey: "testimonials.testimonial2.quote",
+    authorKey: "testimonials.testimonial2.author",
   },
   {
     id: 3,
-    quote: "An essential resource for fostering resilience and grit. Power-Up Your Mind captures the essence of what tweens need today: confidence, compassion for themselves, and the courage to try again. The activities are fun and practical, and the growth mindset vocabulary is brilliant for helping kids internalize powerful new habits of thought. I plan to use this book in my social-emotional learning groups moving forward.",
-    author: "Dr. Alex Raines, PsyD, Child Psychologist",
+    quoteKey: "testimonials.testimonial3.quote",
+    authorKey: "testimonials.testimonial3.author",
   },
   {
     id: 4,
-    quote: "A fresh, empowering approach to mindset education. This book doesn't just teach concepts, it transforms how tweens think about learning and mistakes. My son loved the superhero theme, and I loved how naturally it led us into meaningful conversations. If you're a parent, teacher, or mentor who wants to help kids embrace challenges and believe in themselves, this book is a treasure.",
-    author: "Jessica Morales, 5th Grade Teacher and Youth Mentor",
+    quoteKey: "testimonials.testimonial4.quote",
+    authorKey: "testimonials.testimonial4.author",
   },
   {
     id: 5,
-    quote: "Finally! A growth mindset book that tweens actually want to read! As an educator, I've seen my fair share of 'self-help' books for kids, but Power-Up Your Mind stands out because it truly understands its audience. It's colorful, positive, and never talks down to kids. The section on goal-setting and self-talk is worth the price alone. Highly recommended for classrooms, families, and anyone who believes in building strong, confident young minds.",
-    author: "Robert T. Fields, MS, Educational Psychologist",
+    quoteKey: "testimonials.testimonial5.quote",
+    authorKey: "testimonials.testimonial5.author",
   },
 ];
 
@@ -56,9 +56,9 @@ const Testimonials = () => {
             >
               <div className="text-gold text-5xl font-serif absolute top-3 left-3 opacity-20">"</div>
               <p className="text-gray-300 mb-4 relative z-10">
-                {testimonial.quote}
+                {t(testimonial.quoteKey)}
               </p>
-              <p className="text-gold font-medium italic">— {testimonial.author}</p>
+              <p className="text-gold font-medium italic">— {t(testimonial.authorKey)}</p>
             </div>
           ))}
         </div>
@@ -72,9 +72,9 @@ const Testimonials = () => {
             >
               <div className="text-gold text-5xl font-serif absolute top-3 left-3 opacity-20">"</div>
               <p className="text-gray-300 mb-4 relative z-10">
-                {testimonial.quote}
+                {t(testimonial.quoteKey)}
               </p>
-              <p className="text-gold font-medium italic">— {testimonial.author}</p>
+              <p className="text-gold font-medium italic">— {t(testimonial.authorKey)}</p>
             </div>
           ))}
         </div>

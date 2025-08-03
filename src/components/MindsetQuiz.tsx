@@ -244,30 +244,30 @@ const MindsetQuiz = () => {
                   control={form.control}
                   name="currentAnswer"
                   rules={{ required: 'Please select an option' }} // --> Added basic validation rule
-                  render={({ field }) => (
-                    <FormItem className="space-y-3">
-                      <FormLabel className="text-xl font-semibold text-navy text-center block"> {/* --> Centered question */}
-                        {quizQuestions[currentQuestion].question}
-                      </FormLabel>
-                      <FormControl>
-                        <RadioGroup
-                          onValueChange={field.onChange}
-                          className="space-y-3 pt-4"
-                        >
-                          {quizQuestions[currentQuestion].options.map((option, idx) => (
-                            <Label // --> Use Label as the clickable container
-                                htmlFor={`option-${currentQuestion}-${idx}`} // --> Ensure unique ID across questions
-                                className={`flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${field.value === option.value ? 'border-gold bg-soft-gold/20 shadow-sm' : 'border-gray-200 hover:border-gold/50 hover:bg-soft-gold/10'}`}
-                            >
-                              <RadioGroupItem value={option.value} id={`option-${currentQuestion}-${idx}`} className="border-gray-400" />
-                              <span className="flex-1 text-gray-700">{option.label}</span> {/* --> Changed Label to span */}
-                            </Label>
-                          ))}
-                        </RadioGroup>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+render={({ field }) => (
+  <FormItem className="space-y-3">
+    <FormLabel className="text-xl font-semibold text-navy text-center block"> {/* --> Centered question */}
+      {quizQuestions[currentQuestion].question}
+    </FormLabel>
+    <RadioGroup
+      onValueChange={field.onChange}
+      className="space-y-3 pt-4"
+    >
+      {quizQuestions[currentQuestion].options.map((option, idx) => (
+        <div
+            key={`option-${currentQuestion}-${idx}`}
+            className={`flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${field.value === option.value ? 'border-gold bg-soft-gold/20 shadow-sm' : 'border-gray-200 hover:border-gold/50 hover:bg-soft-gold/10'}`}
+        >
+          <RadioGroupItem value={option.value} id={`option-${currentQuestion}-${idx}`} className="border-gray-400" />
+          <Label htmlFor={`option-${currentQuestion}-${idx}`} className="flex-1 text-gray-700 cursor-pointer">
+            {option.label}
+          </Label>
+        </div>
+      ))}
+    </RadioGroup>
+    <FormMessage />
+  </FormItem>
+)}
                 />
                 <div className="pt-6 flex justify-end"> {/* --> Increased top padding */}
                   <Button
