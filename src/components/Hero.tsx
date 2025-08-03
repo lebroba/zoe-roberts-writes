@@ -81,7 +81,7 @@ const Hero = () => {
                 <img 
                   alt="Zoe Roberts"
                   className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover" 
-                  src="/lovable-uploads/f3473e03-4453-45cc-8bf3-cbdc7badfba1.jpg" 
+                  src="/lovable-uploads/d46195fb-70b7-4364-b6bf-69defcf0620e.png" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
