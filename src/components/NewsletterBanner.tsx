@@ -9,7 +9,7 @@ const NewsletterBanner = () => {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Simple validation
@@ -22,13 +22,38 @@ const NewsletterBanner = () => {
       return;
     }
     
-    // In a real application, this would connect to a newsletter service
-    toast({
-      title: t('newsletterBanner.toast.success.title'),
-      description: t('newsletterBanner.toast.success.description'),
-    });
-    
-    setEmail("");
+    try {
+      // Send email to backend
+      const response = await fetch('http://localhost:3001/api/emails/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (!data.success) {
+        throw new Error(data.message || 'Failed to save email');
+      }
+
+      toast({
+        title: t('newsletterBanner.toast.success.title'),
+        description: t('newsletterBanner.toast.success.description'),
+      });
+      
+      setEmail("");
+    } catch (error) {
+      console.error("Error saving email:", error);
+      toast({
+        title: "Error",
+        description: "There was an issue subscribing to the newsletter. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (

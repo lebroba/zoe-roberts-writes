@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Collection Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        .emails-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+        .source-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .source-quiz {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        .source-newsletter {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+        .quiz-result {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .result-growth {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        .result-fixed {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .result-mixed {
+            background-color: #e0e7ff;
+            color: #3730a3;
+        }
+        .actions {
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #1e40af;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        .error {
+            background-color: #fef2f2;
+            color: #dc2626;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📧 Email Collection Dashboard</h1>
+        <p>Monitor and manage collected emails from your website</p>
+    </div>
+
+    <div class="stats" id="stats">
+        <div class="stat-card">
+            <div class="stat-number" id="total-emails">-</div>
+            <div class="stat-label">Total Emails</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="quiz-emails">-</div>
+            <div class="stat-label">Quiz Submissions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="newsletter-emails">-</div>
+            <div class="stat-label">Newsletter Signups</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="quiz-results">-</div>
+            <div class="stat-label">With Quiz Results</div>
+        </div>
+    </div>
+
+    <div class="emails-section">
+        <div class="actions">
+            <button class="btn" onclick="refreshData()">🔄 Refresh</button>
+            <a href="http://localhost:3001/api/emails/export" class="btn" download>📥 Export CSV</a>
+        </div>
+
+        <h2>📋 Collected Emails</h2>
+        <div id="loading" class="loading">Loading emails...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        
+        <table id="emails-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Email Address</th>
+                    <th>Source</th>
+                    <th>Quiz Result</th>
+                    <th>Date Collected</th>
+                </tr>
+            </thead>
+            <tbody id="emails-tbody">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3001/api';
+
+        async function fetchStats() {
+            try {
+                const response = await fetch(`${API_BASE}/emails/stats`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('total-emails').textContent = data.stats.total;
+                    document.getElementById('quiz-emails').textContent = data.stats.by_source.quiz?.count || 0;
+                    document.getElementById('newsletter-emails').textContent = data.stats.by_source.newsletter?.count || 0;
+                    document.getElementById('quiz-results').textContent = data.stats.by_source.quiz?.with_quiz_results || 0;
+                }
+            } catch (error) {
+                console.error('Error fetching stats:', error);
+            }
+        }
+
+        async function fetchEmails() {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('error').style.display = 'none';
+                document.getElementById('emails-table').style.display = 'none';
+
+                const response = await fetch(`${API_BASE}/emails`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayEmails(data.emails);
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('emails-table').style.display = 'table';
+                } else {
+                    throw new Error(data.message || 'Failed to fetch emails');
+                }
+            } catch (error) {
+                console.error('Error fetching emails:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent = `Error: ${error.message}`;
+            }
+        }
+
+        function displayEmails(emails) {
+            const tbody = document.getElementById('emails-tbody');
+            tbody.innerHTML = '';
+
+            if (emails.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #666;">No emails collected yet</td></tr>';
+                return;
+            }
+
+            emails.forEach(email => {
+                const row = document.createElement('tr');
+                
+                const sourceBadge = `<span class="source-badge source-${email.source}">${email.source}</span>`;
+                
+                let quizResultBadge = '-';
+                if (email.quiz_result) {
+                    quizResultBadge = `<span class="quiz-result result-${email.quiz_result}">${email.quiz_result}</span>`;
+                }
+
+                const date = new Date(email.created_at).toLocaleString();
+
+                row.innerHTML = `
+                    <td>${email.email}</td>
+                    <td>${sourceBadge}</td>
+                    <td>${quizResultBadge}</td>
+                    <td>${date}</td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+        }
+
+        function refreshData() {
+            fetchStats();
+            fetchEmails();
+        }
+
+        // Initial load
+        refreshData();
+
+        // Auto-refresh every 30 seconds
+        setInterval(refreshData, 30000);
+    </script>
+</body>
+</html>
