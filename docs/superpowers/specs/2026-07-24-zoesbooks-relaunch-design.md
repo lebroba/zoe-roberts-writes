@@ -93,10 +93,13 @@ Book data is currently duplicated across `Books.tsx`, `FeaturedBooks.tsx`, and `
 ```
 src/content/
   book.ts       — title, subtitle, description, year, cover map by language,
-                  Amazon links by region
+                  editions[] (format + ASIN), Amazon links by region
+  about.ts      — Zoe's biography, verbatim as supplied
   reviews.ts    — real Amazon reviews: reviewer, rating, text
   site.ts       — domain, social URLs, contact email, Kit form ID, Formspree ID
 ```
+
+`book.ts` models editions as a list rather than a single `purchaseLink`, so Kindle and paperback render as sibling buttons and a third format later needs no structural change. An edition with no ASIN is omitted from the UI rather than rendering a dead button.
 
 Every component reads from these. No content literals in components.
 
@@ -225,6 +228,8 @@ Received from Zoe 2026-07-24 (`Inputs/`). This resolves most of the content depe
   `https://www.amazon.com/dp/B0FG1YLHSC`
   This replaces the existing `https://a.co/d/52Rw8Dw` shortlink in `Books.tsx`, `FeaturedBooks.tsx`, and `Hero.tsx`.
 
+  A **paperback edition also exists** and its ASIN is still to be supplied. Both editions are surfaced side by side rather than defaulting to Kindle: this is an activity and journal book, so print is the format most parents and effectively all teachers will want. Burying it behind a Kindle link would cost sales.
+
 ### Real biography
 
 Supplied in full; replaces every fabricated claim in the About section. Summary of the true facts, for reference when writing page copy:
@@ -267,9 +272,10 @@ Implementation can begin immediately; these gate launch, not the work. Each has 
 | Kit form ID | Outstanding | Email capture | Submit disabled, visible config error in dev |
 | Formspree form ID | Outstanding | Contact | Submit disabled, visible config error in dev |
 | Zoe's contact email | Outstanding | Contact, footer | Placeholder omitted rather than shown as `contact@zoeroberts.com` |
-| Domain: `.com` vs `.net` | **Blocking** | Canonical URL, `og:url`, journal PDF footer | See below |
+| Paperback ASIN | Outstanding | `/`, `/book` buy section | Kindle button renders alone; paperback omitted until supplied |
+| Corrected journal PDF | Outstanding | Kit automation | Blocks the first send, not the build |
 
-The domain conflict is the one item that cannot be deferred: the lead magnet PDF has `WWW.ZOESBOOKS.NET` printed on all three pages, while the stated domain is zoesbooks.com. Whichever is authoritative, the other must be corrected or redirected before the first subscriber receives the file.
+**Domain resolved: zoesbooks.com is authoritative.** The lead magnet PDF prints `WWW.ZOESBOOKS.NET` on all three pages and must be corrected before the first subscriber receives it. This blocks turning the Kit automation on; it does not block building or deploying the site. If the corrected artwork is slow to arrive, registering zoesbooks.net and redirecting it to .com is an acceptable stopgap that makes the printed URL resolve.
 
 **Nothing renders a fabricated value as a stand-in.** Missing content is either omitted or visibly marked, never invented.
 
