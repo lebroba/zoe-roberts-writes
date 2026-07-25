@@ -1,211 +1,122 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Lightbulb, Rocket, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import EmailCapture from "./EmailCapture";
+import { QUESTIONS, RESULTS, score, type Answer } from "@/content/quiz";
 
 /**
- * Growth-mindset self-assessment.
+ * Five-question mindset check.
  *
- * Questions and result copy are kept verbatim from the original component —
- * they are built on standard Dweck framing and were the one piece of generated
- * content that held up. The implementation around them is new.
- *
- * Two behavioural changes from the original:
- *  - the email step logged to the console and discarded the address; it now
- *    posts to Kit through the shared EmailCapture component
- *  - the result is shown immediately rather than held hostage behind the email
- *    form, with the journal offered alongside it
+ * Mounted on both / and /free-guide. The result is shown immediately and is
+ * never held behind the email form — the email patch sits below it as an offer,
+ * not a gate.
  */
-
-const QUESTIONS = [
-  {
-    id: "q1",
-    question: "When you face a challenging task, you usually:",
-    options: [
-      { value: "growth", label: "Get excited by the opportunity to learn something new" },
-      { value: "fixed", label: "Worry about whether you'll be able to do it well" },
-    ],
-  },
-  {
-    id: "q2",
-    question: "When you receive criticism, you typically:",
-    options: [
-      { value: "fixed", label: "Take it personally and feel discouraged" },
-      { value: "growth", label: "See it as helpful feedback to improve" },
-    ],
-  },
-  {
-    id: "q3",
-    question: "When you see someone more talented than you, you tend to:",
-    options: [
-      { value: "growth", label: "Feel inspired and look for ways to learn from them" },
-      { value: "fixed", label: "Feel threatened or intimidated by their abilities" },
-    ],
-  },
-  {
-    id: "q4",
-    question: "When you make a mistake, you usually:",
-    options: [
-      { value: "fixed", label: "Try to hide it or make excuses" },
-      { value: "growth", label: "See it as a learning opportunity" },
-    ],
-  },
-  {
-    id: "q5",
-    question: "When learning something new, you believe:",
-    options: [
-      { value: "growth", label: "Your abilities can improve with practice and effort" },
-      { value: "fixed", label: "You either have a natural talent for it or you don't" },
-    ],
-  },
-] as const;
-
-type ResultType = "growth" | "fixed" | "mixed";
-
-const RESULTS: Record<ResultType, { title: string; description: string; Icon: typeof Rocket }> = {
-  growth: {
-    title: "Growth Mindset",
-    description:
-      "You tend to believe that your abilities can be developed through dedication and hard work. This view creates a love of learning and resilience that is essential for great accomplishment.",
-    Icon: Rocket,
-  },
-  mixed: {
-    title: "Mixed Mindset",
-    description:
-      "You show elements of both growth and fixed mindsets. You sometimes embrace challenges and value effort, while other times you may doubt your ability to improve.",
-    Icon: Lightbulb,
-  },
-  fixed: {
-    title: "Fixed Mindset",
-    description:
-      "You tend to believe that your qualities are fixed traits that cannot change. This can make you avoid challenges and give up easily when facing obstacles.",
-    Icon: Star,
-  },
-};
-
-function score(answers: string[]): ResultType {
-  const growth = answers.filter((a) => a === "growth").length;
-  const fixed = answers.filter((a) => a === "fixed").length;
-  if (growth >= 4) return "growth";
-  if (fixed >= 4) return "fixed";
-  return "mixed";
-}
-
 const MindsetQuiz: React.FC = () => {
   const [started, setStarted] = useState(false);
-  const [index, setIndex] = useState(0);
-  const [answers, setAnswers] = useState<string[]>([]);
+  const [answers, setAnswers] = useState<Answer[]>([]);
 
-  const result = answers.length === QUESTIONS.length ? score(answers) : null;
-
-  const answer = (value: string) => {
-    setAnswers((prev) => [...prev, value]);
-    if (index < QUESTIONS.length - 1) setIndex(index + 1);
-  };
+  const index = answers.length;
+  const result = index === QUESTIONS.length ? score(answers) : null;
+  const question = result ? null : QUESTIONS[index];
 
   const restart = () => {
-    setStarted(false);
-    setIndex(0);
     setAnswers([]);
+    setStarted(false);
   };
 
   return (
-    <div className="rounded-xl border border-border bg-white p-6 shadow-sm sm:p-8">
+    <div
+      className="card-soft mx-auto max-w-[760px] bg-bg shadow-sm"
+      style={{ padding: "clamp(28px,4vw,48px)" }}
+    >
       {!started && (
-        <div className="text-center">
-          <h3 className="font-display text-2xl font-extrabold text-ink">
-            Fixed or growth mindset?
+        <div>
+          <h3 className="font-heading text-[26px] leading-tight text-text">
+            Fixed or growth — a five-question check
           </h3>
-          <p className="mx-auto mt-3 max-w-md text-slate">
-            Five quick questions. Take it yourself, or sit down and go through it with your
-            tween.
+          <p className="mt-3 max-w-[52ch] text-neutral-800">
+            There’s no score to be ashamed of. Most children come out mixed, and mixed is the
+            easiest place to start from.
           </p>
-          <Button
-            onClick={() => setStarted(true)}
-            className="mt-6 bg-ink px-8 py-3 font-display text-base font-bold text-white hover:bg-hero-blue"
-          >
-            Start the quiz
-          </Button>
+          <button type="button" onClick={() => setStarted(true)} className="btn-primary btn-lg mt-6">
+            Start the check
+          </button>
         </div>
       )}
 
-      {started && !result && (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.25 }}
-        >
-          <div className="mb-6">
-            <div className="mb-2 flex items-center justify-between">
-              <span className="font-display text-sm font-bold uppercase tracking-wide text-hero-blue">
-                Question {index + 1} of {QUESTIONS.length}
-              </span>
-            </div>
+      {started && question && (
+        <div>
+          <p className="eyebrow">
+            Question {index + 1} of {QUESTIONS.length}
+          </p>
+
+          <div
+            className="mt-3 h-2 w-full overflow-hidden rounded-full bg-neutral-300"
+            role="progressbar"
+            aria-valuenow={index + 1}
+            aria-valuemin={1}
+            aria-valuemax={QUESTIONS.length}
+            aria-label={`Question ${index + 1} of ${QUESTIONS.length}`}
+          >
             <div
-              className="h-2 w-full overflow-hidden rounded-full bg-border"
-              role="progressbar"
-              aria-valuenow={index + 1}
-              aria-valuemin={1}
-              aria-valuemax={QUESTIONS.length}
-            >
-              <div
-                className="h-full rounded-full bg-sunshine transition-all duration-300"
-                style={{ width: `${((index + 1) / QUESTIONS.length) * 100}%` }}
-              />
-            </div>
+              className="h-full rounded-full bg-accent2-500"
+              style={{
+                width: `${((index + 1) / QUESTIONS.length) * 100}%`,
+                transition: "width .35s ease",
+              }}
+            />
           </div>
 
-          <p className="font-display text-xl font-bold text-ink">{QUESTIONS[index].question}</p>
+          <p
+            className="mt-6 max-w-[34ch] font-heading text-text"
+            style={{ fontSize: "clamp(22px,2.6vw,28px)", lineHeight: 1.25 }}
+          >
+            {question.question}
+          </p>
 
-          <div className="mt-5 space-y-3">
-            {QUESTIONS[index].options.map((opt) => (
+          <div className="mt-6 flex flex-col gap-3.5">
+            {question.options.map((opt) => (
               <button
-                key={opt.value}
+                key={opt.value + opt.label}
                 type="button"
-                onClick={() => answer(opt.value)}
-                className="w-full rounded-lg border-2 border-border px-4 py-3 text-left text-slate transition hover:border-sunshine hover:bg-paper-warm focus:outline-none focus:ring-2 focus:ring-sunshine"
+                onClick={() => setAnswers((prev) => [...prev, opt.value])}
+                className="rounded-md border border-neutral-400 bg-neutral-100 px-[22px] py-[18px] text-left text-[17px] text-text transition-[background-color,border-color] duration-150 hover:border-accent-400 hover:bg-accent-100"
               >
                 {opt.label}
               </button>
             ))}
           </div>
-        </motion.div>
+        </div>
       )}
 
       {result && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-          <div className="text-center">
-            {React.createElement(RESULTS[result].Icon, {
-              className: "mx-auto h-12 w-12 text-sunshine",
-              "aria-hidden": "true",
-            })}
-            <h3 className="mt-3 font-display text-2xl font-extrabold text-ink">
-              {RESULTS[result].title}
-            </h3>
-            <p className="mx-auto mt-3 max-w-lg leading-relaxed text-slate">
-              {RESULTS[result].description}
-            </p>
-          </div>
+        <div className="zr-fade">
+          <p className="eyebrow">Your result</p>
+          <h3 className="mt-2 font-heading text-[28px] leading-tight text-text">
+            {RESULTS[result].title}
+          </h3>
+          <p className="mt-3 max-w-[54ch] text-lg text-neutral-800">{RESULTS[result].body}</p>
+          <p className="mt-3 max-w-[54ch] font-semibold text-accent2-800">{RESULTS[result].next}</p>
 
-          <div className="mt-7 rounded-lg bg-paper-warm p-5">
-            <p className="mb-3 text-center font-display font-bold text-ink">
+          <div className="mt-7 rounded-lg border border-accent2-400 bg-accent2-200 p-[26px]">
+            <p className="font-body font-bold text-text">
               Want the free journal to work on this together?
             </p>
-            <EmailCapture source="quiz-result" cta="Send it to me" />
+            <EmailCapture
+              source="quiz-result"
+              cta="Send it to me"
+              successTitle="On its way"
+              successBody="Confirm the email we just sent and the journal follows."
+              className="mt-4"
+            />
           </div>
 
-          <div className="mt-5 text-center">
-            <button
-              type="button"
-              onClick={restart}
-              className="text-sm font-semibold text-hero-blue underline underline-offset-4 hover:text-ink"
-            >
-              Take the quiz again
-            </button>
-          </div>
-        </motion.div>
+          <button
+            type="button"
+            onClick={restart}
+            className="mt-5 text-[15px] text-neutral-700 underline underline-offset-4 hover:text-accent-700"
+          >
+            Take it again
+          </button>
+        </div>
       )}
     </div>
   );

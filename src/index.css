@@ -1,17 +1,15 @@
-/* Self-hosted fonts. Replaces the Google Fonts @import, which was render-blocking,
-   pulled 15 unused weights of Playfair Display, and sent every visitor's IP to Google. */
-/* latin + latin-ext only: covers EN plus the ES/FR/IT/PT roadmap.
-   The unscoped imports also ship Cyrillic, Greek, and Vietnamese — 62 files instead of 20. */
-@import "@fontsource/nunito/latin-700.css";
-@import "@fontsource/nunito/latin-800.css";
-@import "@fontsource/nunito/latin-ext-700.css";
-@import "@fontsource/nunito/latin-ext-800.css";
-@import "@fontsource/inter/latin-400.css";
-@import "@fontsource/inter/latin-500.css";
-@import "@fontsource/inter/latin-600.css";
-@import "@fontsource/inter/latin-ext-400.css";
-@import "@fontsource/inter/latin-ext-500.css";
-@import "@fontsource/inter/latin-ext-600.css";
+/* Organic design system fonts, self-hosted. The system's styles.css pulls these
+   from Google Fonts via @import; self-hosting avoids a render-blocking request
+   and keeps visitor IPs off Google, which matters for the EU languages on the
+   roadmap. latin + latin-ext only — every language planned here is Latin script. */
+@import "@fontsource/caprasimo/latin-400.css";
+@import "@fontsource/caprasimo/latin-ext-400.css";
+@import "@fontsource/figtree/latin-400.css";
+@import "@fontsource/figtree/latin-600.css";
+@import "@fontsource/figtree/latin-700.css";
+@import "@fontsource/figtree/latin-ext-400.css";
+@import "@fontsource/figtree/latin-ext-600.css";
+@import "@fontsource/figtree/latin-ext-700.css";
 
 @tailwind base;
 @tailwind components;
@@ -19,49 +17,46 @@
 
 @layer base {
   :root {
-    /* Brand palette, sampled from the book cover.
-       ink        #16324F   sunshine  #FFC72C
-       hero-blue  #1A4D8F   slate     #4A5568   paper-warm #FFFDF8 */
-    --background: 0 0% 100%;
-    --foreground: 211 56% 20%;
+    /* shadcn HSL properties, mapped onto the Organic palette.
+       Hex equivalents live in tailwind.config.ts — these exist so the one
+       remaining shadcn component (button) inherits the same colours. */
+    --background: 37 55% 90%;      /* #f5ead8 page ground */
+    --foreground: 20 5% 12%;       /* #201e1d */
 
-    --card: 0 0% 100%;
-    --card-foreground: 211 56% 20%;
+    --card: 40 47% 95%;            /* #f9f4ed neutral-100 */
+    --card-foreground: 20 5% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 211 56% 20%;
+    --popover: 40 47% 95%;
+    --popover-foreground: 20 5% 12%;
 
-    --primary: 211 56% 20%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 25 56% 50%;         /* #c67139 accent */
+    --primary-foreground: 40 47% 95%;
 
-    --secondary: 44 100% 59%;
-    --secondary-foreground: 211 56% 20%;
+    --secondary: 40 32% 89%;       /* #eee7db neutral-200 */
+    --secondary-foreground: 20 5% 12%;
 
-    --muted: 42 100% 99%;
-    --muted-foreground: 218 17% 35%;
+    --muted: 40 47% 95%;
+    --muted-foreground: 36 12% 33%; /* #645c50 neutral-700 */
 
-    --accent: 44 100% 59%;
-    --accent-foreground: 211 56% 20%;
+    --accent: 24 100% 91%;         /* #ffe1d0 accent-200 */
+    --accent-foreground: 22 57% 16%; /* #402310 accent-900 */
 
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 65% 42%;
+    --destructive-foreground: 40 47% 95%;
 
-    --border: 214 20% 89%;
-    --input: 214 20% 89%;
-    --ring: 214 69% 33%;
+    --border: 33 20% 70%;          /* #c0b6a5 neutral-400 */
+    --input: 33 20% 70%;
+    --ring: 25 56% 50%;
 
-    --radius: 0.625rem;
+    --radius: 1rem;                /* 16px, --radius-md */
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
-    @apply bg-paper text-slate font-sans antialiased;
-    scroll-behavior: smooth;
+    @apply bg-bg font-body text-text antialiased;
+    font-size: 17px;
+    line-height: 1.6;
   }
 
   h1,
@@ -70,11 +65,24 @@
   h4,
   h5,
   h6 {
-    @apply font-display text-ink;
-    text-wrap: balance;
+    @apply font-heading font-normal;
+    /* Caprasimo is a heavy display face; body leading leaves visible gaps
+       between lines. The handoff pins line-height on each H1 inline — this is
+       the default for everything it doesn't specify. */
+    line-height: 1.15;
+    text-wrap: pretty;
   }
 
-  /* Respect users who ask for reduced motion. */
+  p {
+    text-wrap: pretty;
+  }
+
+  /* From the Organic system. Never the browser default. */
+  :focus-visible {
+    outline: 2px solid theme("colors.accent.DEFAULT");
+    outline-offset: 2px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -88,54 +96,89 @@
 }
 
 @layer components {
-  .book-cover {
-    @apply relative overflow-hidden rounded-md shadow-xl transition-transform duration-500;
+  /* The site's one container. 1120px, 24px gutters. */
+  .shell {
+    @apply mx-auto w-full max-w-[1120px] px-6;
   }
 
-  .book-cover:hover img {
-    @apply scale-[1.03];
+  /* Section rhythm, fluid rather than stepped at breakpoints. */
+  .section-y {
+    padding-block: clamp(48px, 6.5vw, 92px);
   }
 
-  /* Section heading with the cover's yellow as a underline swash. */
-  .section-heading {
-    @apply relative inline-block font-display text-3xl font-extrabold text-ink md:text-4xl;
+  .eyebrow {
+    @apply font-body font-bold uppercase text-accent2-700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
   }
 
-  .section-heading::after {
-    content: "";
-    @apply absolute -bottom-2 left-0 h-1 w-2/5 rounded-full bg-sunshine;
+  /* Buttons are pills throughout. */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full font-body font-semibold transition-colors duration-150;
   }
 
-  /* Marker-pen highlight behind inline text.
-     box-decoration-break: clone makes the gradient restart on each line box,
-     so a highlighted phrase that wraps gets a continuous marker on both lines
-     instead of one stretched gradient split across them. */
-  .highlight {
-    background-image: linear-gradient(180deg, transparent 62%, theme("colors.sunshine") 62%);
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+  /* Deviation from the handoff, on contrast grounds.
+     The Organic system fills .btn-primary with the base accent (#c67139).
+     Against the neutral-100 label that measures 3.30:1, and the button labels
+     are 15–16px semibold — not "large text" under WCAG, so 4.5:1 applies.
+     accent-600 only reaches 4.10:1. accent-700 gives 6.22:1 and is the same
+     rule the system already states for body-size accent text, applied to the
+     inverse case. Hover steps to accent-800. */
+  .btn-primary {
+    @apply btn bg-accent-700 text-neutral-100 hover:bg-accent-800 active:bg-accent-900;
   }
 
-  .nav-link {
-    @apply relative inline-block py-1 text-sm font-semibold text-ink/75 transition-colors duration-200 hover:text-ink;
+  .btn-lg {
+    @apply px-[26px] py-[14px] text-base;
   }
 
-  .nav-link::after {
-    content: "";
-    @apply absolute -bottom-0.5 left-0 h-0.5 w-0 rounded-full bg-sunshine transition-all duration-300;
+  .btn-md {
+    @apply px-5 py-2.5 text-[15px];
   }
 
-  .nav-link:hover::after,
-  .nav-link[aria-current="page"]::after {
-    @apply w-full;
+  /* Pill text input, matching the button height. */
+  .input-pill {
+    @apply w-full rounded-full border border-neutral-400 bg-neutral-100 px-5 py-[14px] text-base text-text outline-none placeholder:text-neutral-600 disabled:opacity-60;
   }
 
-  .nav-link[aria-current="page"] {
-    @apply text-ink;
+  /* Squared input for the contact form's multi-field card. */
+  .input-box {
+    @apply w-full rounded-md border border-neutral-400 bg-bg px-[18px] py-[13px] text-base text-text outline-none placeholder:text-neutral-600 disabled:opacity-60;
+  }
+
+  .card-soft {
+    @apply rounded-lg border border-divider bg-neutral-100;
+  }
+
+  /* Every multi-column block collapses on its own, no media queries. */
+  .auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .auto-grid-lg {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 }
 
+/* The system's single motion keyframe. Applied to success states and the quiz result. */
+@keyframes zrFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.zr-fade {
+  animation: zrFade 0.4s ease both;
+}
+
 ::selection {
-  background: theme("colors.sunshine");
-  color: theme("colors.ink");
+  background: theme("colors.accent.300");
+  color: theme("colors.accent.900");
 }

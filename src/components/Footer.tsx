@@ -1,103 +1,62 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Mail } from "lucide-react";
-import { CONTACT_EMAIL, SITE, SOCIAL } from "@/content/site";
+import { NAV_ITEMS } from "./Navbar";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { SITE } from "@/content/site";
 
-const QUICK_LINKS = [
-  { path: "/", label: "Home" },
-  { path: "/book", label: "The Book" },
-  { path: "/free-guide", label: "Free Guide" },
-  { path: "/about", label: "About" },
-  { path: "/contact", label: "Contact" },
-];
-
-const Footer: React.FC = () => {
-  const year = new Date().getFullYear();
-
-  // Only render icons for profiles we actually have. The generated footer
-  // linked to facebook.com and twitter.com — the platform homepages.
-  const socials = [
-    { key: "facebook", href: SOCIAL.facebook, Icon: Facebook, label: "Facebook" },
-    { key: "instagram", href: SOCIAL.instagram, Icon: Instagram, label: "Instagram" },
-  ].filter((s): s is typeof s & { href: string } => Boolean(s.href));
-
-  return (
-    <footer className="mt-auto bg-ink py-12 text-white">
-      <div className="container">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <h2 className="font-display text-lg font-extrabold text-white">{SITE.name}</h2>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/70">
-              {SITE.tagline}. Helping tweens and teens build confidence, resilience, and a
-              growth mindset.
-            </p>
-
-            {(socials.length > 0 || CONTACT_EMAIL) && (
-              <div className="mt-4 flex gap-3">
-                {socials.map(({ key, href, Icon, label }) => (
-                  <a
-                    key={key}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/70 transition hover:text-sunshine"
-                    aria-label={label}
-                  >
-                    <Icon size={20} />
-                  </a>
-                ))}
-                {CONTACT_EMAIL && (
-                  <a
-                    href={`mailto:${CONTACT_EMAIL}`}
-                    className="text-white/70 transition hover:text-sunshine"
-                    aria-label="Email"
-                  >
-                    <Mail size={20} />
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
-
-          <nav aria-label="Footer">
-            <h2 className="font-display text-lg font-extrabold text-white">Quick Links</h2>
-            <ul className="mt-3 space-y-2">
-              {QUICK_LINKS.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-white/70 transition hover:text-sunshine"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div>
-            <h2 className="font-display text-lg font-extrabold text-white">Free Daily Journal</h2>
-            <p className="mt-3 text-sm leading-relaxed text-white/70">
-              Three printable pages to help your child track their progress and turn setbacks
-              into momentum.
-            </p>
-            <Link
-              to="/free-guide"
-              className="mt-4 inline-flex rounded-lg bg-sunshine px-4 py-2 font-display text-sm font-bold text-ink transition hover:brightness-95"
-            >
-              Get it free
-            </Link>
-          </div>
+/**
+ * No social icons. They return when SOCIAL in content/site.ts holds real URLs —
+ * the generated footer linked to the platform homepages instead.
+ */
+const Footer: React.FC = () => (
+  <footer
+    className="mt-[clamp(40px,6vw,80px)] bg-neutral-900 text-neutral-300"
+    style={{ padding: "clamp(48px,6vw,72px) 0 clamp(28px,3vw,40px)" }}
+  >
+    <div className="shell">
+      <div className="auto-grid gap-10">
+        <div>
+          <p className="font-heading text-[26px] text-neutral-100">{SITE.name}</p>
+          <p className="mt-2 max-w-[28ch] text-base">Growth mindset books for tweens and teens.</p>
         </div>
 
-        <div className="mt-10 border-t border-white/15 pt-6 text-center text-sm text-white/50">
-          <p>
-            &copy; {year} {SITE.name}. All rights reserved.
+        <nav aria-label="Footer">
+          <p className="eyebrow text-neutral-500">Pages</p>
+          <ul className="mt-3 space-y-2">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className="text-base transition-colors hover:text-accent-300"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div>
+          <p className="eyebrow text-neutral-500">The free journal</p>
+          <p className="mt-3 max-w-[30ch] text-base">
+            Three printable pages, sent straight to your inbox.
           </p>
+          <Link to="/free-guide" className="btn-primary btn-md mt-4">
+            Get it free
+          </Link>
         </div>
       </div>
-    </footer>
-  );
-};
+
+      <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-neutral-800 pt-6 text-sm text-neutral-500">
+        <p>
+          &copy; 2026 {SITE.name} · {SITE.domain}
+        </p>
+        {/* Renders nothing while only English is enabled. Lives here rather than
+            in the header so it never competes with the Free journal CTA. */}
+        <LanguageSwitcher />
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { BIO, PORTRAIT } from "@/content/about";
+import { ABOUT_FACTS, ABOUT_QUOTE } from "@/content/copy";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
 const About: React.FC = () => {
@@ -14,48 +15,90 @@ const About: React.FC = () => {
 
   return (
     <Layout>
-      <section className="bg-paper-warm py-14 sm:py-16">
-        <div className="container max-w-3xl text-center">
-          <h1 className="font-display text-4xl font-extrabold text-ink sm:text-5xl">
-            About Zoe
-          </h1>
-          <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-sunshine" />
-        </div>
-      </section>
-
-      <section className="py-14 sm:py-16">
-        <div className="container max-w-3xl">
-          {/* Rendered only when a real photograph exists. The generated site
-              used an Unsplash stock photo of an unrelated person here, and an
-              AI-generated portrait on the home page. */}
-          {PORTRAIT && (
-            <div className="mb-12 flex justify-center">
-              <img
-                src={PORTRAIT.src}
-                alt={PORTRAIT.alt}
-                className="max-h-96 w-auto rounded-xl shadow-lg"
-              />
-            </div>
-          )}
-
-          <div className="space-y-6">
-            {BIO.map((para, i) => (
-              <p key={i} className="text-lg leading-relaxed text-slate">
-                {para}
-              </p>
-            ))}
+      <section className="section-y">
+        <div className="shell">
+          <div className="max-w-[22ch]">
+            <p className="eyebrow">About the author</p>
+            <h1
+              className="mt-3 font-heading text-text"
+              style={{
+                fontSize: "clamp(36px,5vw,58px)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Zoe Roberts
+            </h1>
           </div>
 
-          <div className="mt-12 rounded-xl bg-paper-warm p-6 text-center">
-            <p className="font-display text-lg font-bold text-ink">
-              Want to bring Zoe’s work to your classroom or family?
-            </p>
-            <Link
-              to="/contact"
-              className="mt-4 inline-flex rounded-lg bg-ink px-5 py-2.5 font-display font-bold text-white transition hover:bg-hero-blue"
-            >
-              Get in touch
-            </Link>
+          <div
+            className="mt-10 grid items-start"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: "clamp(36px, 5vw, 72px)",
+            }}
+          >
+            <div>
+              {/* No portrait until Zoe supplies a real photograph. The generated
+                  site used an Unsplash stock photo and an AI-generated portrait. */}
+              {PORTRAIT && (
+                <img
+                  src={PORTRAIT.src}
+                  alt={PORTRAIT.alt}
+                  className="mb-8 h-auto w-full rounded-lg"
+                />
+              )}
+
+              <div className="flex max-w-[58ch] flex-col gap-5">
+                {BIO.map((para, i) => (
+                  <p key={i} className="text-lg text-neutral-800" style={{ lineHeight: 1.7 }}>
+                    {para}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <aside className="flex flex-col gap-6">
+              <div
+                className="rounded-lg bg-accent2-800 text-neutral-100"
+                style={{ padding: "36px 32px" }}
+              >
+                <blockquote
+                  className="font-heading text-[24px]"
+                  style={{ lineHeight: 1.3 }}
+                >
+                  “{ABOUT_QUOTE}”
+                </blockquote>
+              </div>
+
+              <div className="card-soft" style={{ padding: "28px 30px" }}>
+                <h2 className="font-heading text-[22px] text-text">In short</h2>
+                <ul className="mt-4 flex flex-col gap-3">
+                  {ABOUT_FACTS.map((fact) => (
+                    <li key={fact} className="flex items-start gap-3 text-base text-neutral-800">
+                      <span
+                        className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-500"
+                        aria-hidden="true"
+                      />
+                      <span>{fact}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div
+                className="rounded-lg border border-accent-300 bg-accent-200"
+                style={{ padding: "28px 30px" }}
+              >
+                <h2 className="font-heading text-[22px] text-accent-900">Invite Zoe</h2>
+                <p className="mt-2 text-accent-900">
+                  School visits, classroom sessions, media and speaking.
+                </p>
+                <Link to="/contact" className="btn-primary btn-md mt-5">
+                  Get in touch
+                </Link>
+              </div>
+            </aside>
           </div>
         </div>
       </section>

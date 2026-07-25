@@ -1,22 +1,17 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { cn } from "@/lib/utils";
 
 interface LayoutProps {
   children: React.ReactNode;
   className?: string;
 }
 
-/**
- * Navbar renders its own <header>, so this no longer wraps it in a second one.
- * The previous version nested two header landmarks.
- */
-const Layout: React.FC<LayoutProps> = ({ children, className }) => (
-  <div className={cn("flex min-h-screen flex-col bg-paper", className)}>
+const Layout: React.FC<LayoutProps> = ({ children, className = "" }) => (
+  <div className={`flex min-h-screen flex-col bg-bg ${className}`.trim()}>
     <a
       href="#main"
-      className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+      className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-accent-700 focus:px-5 focus:py-2.5 focus:font-semibold focus:text-neutral-100"
     >
       Skip to content
     </a>

@@ -61,6 +61,13 @@ export const FORMSPREE_ENDPOINT = FORMSPREE_ID
   ? `https://formspree.io/f/${FORMSPREE_ID}`
   : null;
 
+/**
+ * Shows or hides the mindset quiz on the home page. The quiz always appears on
+ * /free-guide. Set false to pull it from the home page if it doesn't earn its
+ * place there.
+ */
+export const SHOW_QUIZ_ON_HOME = true;
+
 /** The lead magnet, delivered by Kit's automation rather than hosted here. */
 export const LEAD_MAGNET = {
   name: "My Daily Journal",
