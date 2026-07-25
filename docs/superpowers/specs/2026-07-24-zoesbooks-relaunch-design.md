@@ -211,20 +211,65 @@ Without this, `zoesbooks.com/book` returns 404 on direct load even though in-app
 - Environment variables `VITE_KIT_FORM_ID` and `VITE_FORMSPREE_ID` set in the Vercel dashboard for all environments.
 - Domain: zoesbooks.com via Vercel DNS. Currently registered with nothing deployed.
 
+## Supplied Content
+
+Received from Zoe 2026-07-24 (`Inputs/`). This resolves most of the content dependencies below.
+
+### Corrections she requested
+
+- **Publication year 2023 → 2025.** Resolves the `Books.tsx` / `FeaturedBooks.tsx` conflict in favour of 2025.
+- **"Shorten the image."** The book cover on the home page renders too tall, leaving a large empty column beneath the Amazon lockup. Constrain cover height and tighten the surrounding layout.
+- **Replace the books blurb.** The current line — "compelling novels that weave together complex characters and emotional depth" — is fabricated literary-fiction copy. Zoe flagged it herself. Replaced with:
+  > Discover Zoe's children's literature, empowering tweens, teens, and young adults to recognize and embrace their potential.
+- **New Amazon link.** ASIN `B0FG1YLHSC` (Kindle edition). The URL she supplied is a sponsored search result carrying session and referral tracking that will expire; store the canonical form instead:
+  `https://www.amazon.com/dp/B0FG1YLHSC`
+  This replaces the existing `https://a.co/d/52Rw8Dw` shortlink in `Books.tsx`, `FeaturedBooks.tsx`, and `Hero.tsx`.
+
+### Real biography
+
+Supplied in full; replaces every fabricated claim in the About section. Summary of the true facts, for reference when writing page copy:
+
+- Writes children's self-development books; known for a love of learning
+- Born and raised in the suburbs of Washington, D.C. — *not* the Pacific Northwest
+- Background in business leadership and people development — *no* MFA, *no* prior novels
+- Widowed young and became a single mother; poured her energy into raising her son
+- That experience of loss and resilience is the origin of her interest in growth mindset and post-traumatic growth
+- Enjoys nature walks, travel, and time with family
+- **No awards are claimed anywhere in her own copy**
+
+The full text is stored verbatim in `src/content/about.ts` and rendered from there.
+
+### Lead magnet
+
+**"My Daily Journal"** — 3 printable pages, US Letter, black and white, in the same comic-panel style as the book cover. Prompts include a daily power-level meter, gratitude, affirmations, goals, struggles, what I learned, and who I helped.
+
+Known defects in the supplied file, all requiring the original design source to fix (text is outlined vector, not editable):
+
+1. Footer reads `WWW.ZOESBOOKS.NET`, which conflicts with the zoesbooks.com domain
+2. Page 1: "WHO WOULD PROUD OF ME" — missing "BE"
+3. Page 3: the "WHAT ARE MY GOALS FOR TODAY?" panel appears twice
+4. Filename `grid [Converted].pdf` should be `power-up-your-mind-daily-journal.pdf` before it is uploaded to Kit — subscribers see the filename
+
+Items 1–3 are Zoe's to resolve with whoever produced the artwork. The site does not host the file; Kit's automation attaches it.
+
 ## Required Inputs
 
 Implementation can begin immediately; these gate launch, not the work. Each has a defined interim state so nothing blocks.
 
-| Input | Needed for | Interim state |
-|---|---|---|
-| Zoe's real bio | `/about` | Section renders from `content/`, marked clearly incomplete; no fabricated text |
-| Zoe's portrait | `/about`, `/` | Book cover stands in, with honest alt text |
-| The lead magnet PDF | Kit automation | Form and list work; Kit automation attaches the file when supplied |
-| Real Amazon reviews | `/`, `/book` | Reviews section renders from `reviews.ts`; hidden while empty |
-| Real social URLs and X/Twitter handle | Footer, About, Contact, `twitter:site` | Icons omitted rather than linked to bare homepages; `twitter:site` tag omitted |
-| Kit form ID | Email capture | Submit disabled, visible config error in dev |
-| Formspree form ID | Contact | Submit disabled, visible config error in dev |
-| Zoe's contact email | Contact, footer | Placeholder omitted rather than shown as `contact@zoeroberts.com` |
+| Input | Status | Needed for | Interim state |
+|---|---|---|---|
+| Zoe's real bio | **Supplied** | `/about` | — |
+| Lead magnet PDF | **Supplied** | Kit automation | Pending the three artwork fixes above |
+| Amazon link + publication year | **Supplied** | `/`, `/book` | — |
+| Zoe's portrait | Outstanding | `/about`, `/` | Book cover stands in, with honest alt text |
+| Real Amazon reviews | Outstanding | `/`, `/book` | Reviews section renders from `reviews.ts`; hidden while empty |
+| Real social URLs and X/Twitter handle | Outstanding | Footer, About, Contact, `twitter:site` | Icons omitted rather than linked to bare homepages; `twitter:site` tag omitted |
+| Kit form ID | Outstanding | Email capture | Submit disabled, visible config error in dev |
+| Formspree form ID | Outstanding | Contact | Submit disabled, visible config error in dev |
+| Zoe's contact email | Outstanding | Contact, footer | Placeholder omitted rather than shown as `contact@zoeroberts.com` |
+| Domain: `.com` vs `.net` | **Blocking** | Canonical URL, `og:url`, journal PDF footer | See below |
+
+The domain conflict is the one item that cannot be deferred: the lead magnet PDF has `WWW.ZOESBOOKS.NET` printed on all three pages, while the stated domain is zoesbooks.com. Whichever is authoritative, the other must be corrected or redirected before the first subscriber receives the file.
 
 **Nothing renders a fabricated value as a stand-in.** Missing content is either omitted or visibly marked, never invented.
 
