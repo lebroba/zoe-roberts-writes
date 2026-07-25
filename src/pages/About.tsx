@@ -1,90 +1,64 @@
-
 import React from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
-import { Facebook, Twitter, Instagram, Mail } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { BIO, PORTRAIT } from "@/content/about";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
-const About = () => {
-  const { t } = useTranslation();
+const About: React.FC = () => {
+  usePageMeta({
+    title: "About Zoe Roberts | Children's Self-Development Author",
+    description:
+      "Zoe Roberts writes children's self-development books. Her work grew out of raising her son after becoming a young widow, and a belief that a growth mindset can change what a child thinks is possible.",
+    path: "/about",
+  });
+
   return (
     <Layout>
-      <div className="bg-cream py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-playfair font-bold text-navy mb-8 text-center">{t('about.pageTitle')}</h1>
-            
+      <section className="bg-paper-warm py-14 sm:py-16">
+        <div className="container max-w-3xl text-center">
+          <h1 className="font-display text-4xl font-extrabold text-ink sm:text-5xl">
+            About Zoe
+          </h1>
+          <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-sunshine" />
+        </div>
+      </section>
+
+      <section className="py-14 sm:py-16">
+        <div className="container max-w-3xl">
+          {/* Rendered only when a real photograph exists. The generated site
+              used an Unsplash stock photo of an unrelated person here, and an
+              AI-generated portrait on the home page. */}
+          {PORTRAIT && (
             <div className="mb-12 flex justify-center">
-              <div className="relative">
-                <div className="absolute -inset-1 rounded-lg bg-gold/20 blur-lg"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&h=500&q=80"
-                  alt="Zoe Roberts"
-                  className="relative z-10 rounded-lg shadow-lg max-w-full h-auto object-cover"
-                />
-              </div>
+              <img
+                src={PORTRAIT.src}
+                alt={PORTRAIT.alt}
+                className="max-h-96 w-auto rounded-xl shadow-lg"
+              />
             </div>
-            
-            <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="mb-6">
-                Zoe Roberts is an award-winning author known for her emotionally rich narratives and complex characters. Born and raised in the Pacific Northwest, her writing is deeply influenced by the region's moody landscapes, rich literary tradition, and the intricate relationships between people and places.
+          )}
+
+          <div className="space-y-6">
+            {BIO.map((para, i) => (
+              <p key={i} className="text-lg leading-relaxed text-slate">
+                {para}
               </p>
-              
-              <p className="mb-6">
-                With a background in literature and psychology, Zoe crafts stories that explore the depths of human connection, family dynamics, and the quiet moments that define our lives. Her work has been recognized with numerous awards, including the National Book Critics Circle Award and the PEN/Faulkner Award for Fiction.
-              </p>
-              
-              <h2 className="text-2xl font-playfair font-bold text-navy mt-10 mb-4">{t('about.literaryJourney')}</h2>
-              
-              <p className="mb-6">
-                Zoe's literary journey began at an early age, when she would fill notebooks with stories inspired by the books she devoured from her local library. After completing her Master of Fine Arts in Creative Writing at the University of Washington, she published her first short story collection, <em>Threadbare</em>, which received critical acclaim and established her as a promising new voice in literary fiction.
-              </p>
-              
-              <p className="mb-6">
-                Her debut novel, <em>Beneath Quiet Waters</em>, was published in 2017 and became a national bestseller, praised for its lyrical prose and psychological depth. Since then, she has published three additional novels, each exploring different facets of human experience but united by her distinctive voice and emotional insight.
-              </p>
-              
-              <h2 className="text-2xl font-playfair font-bold text-navy mt-10 mb-4">{t('about.writingProcess')}</h2>
-              
-              <p className="mb-6">
-                "I write to understand the world and my place in it," Zoe has said of her process. "Each novel begins with a question I don't know how to answer, a relationship I want to examine, or a moment of human connection I want to explore more deeply."
-              </p>
-              
-              <p className="mb-6">
-                Known for her meticulous research and commitment to emotional authenticity, Zoe typically spends a year researching and planning before beginning the drafting process. She writes primarily in the early morning hours, in a small studio overlooking the Puget Sound, surrounded by books that inspire her and artifacts collected from her travels.
-              </p>
-              
-              <h2 className="text-2xl font-playfair font-bold text-navy mt-10 mb-4">{t('about.personalLife')}</h2>
-              
-              <p className="mb-6">
-                When not writing, Zoe enjoys hiking in the Cascade Mountains, tending to her extensive garden, and volunteering with literacy programs in underserved communities. She lives in Seattle with her partner and their two rescue dogs, who often make appearances on her social media as her "editorial assistants."
-              </p>
-              
-              <p className="mb-6">
-                Zoe is a passionate advocate for independent bookstores and libraries, frequently participating in events that support these vital community spaces. She also teaches occasional writing workshops and mentors emerging writers through various literary organizations.
-              </p>
-            </div>
-            
-            <div className="mt-12 border-t border-gray-300 pt-12">
-              <h2 className="text-2xl font-playfair font-bold text-navy mb-6 text-center">{t('about.connect')}</h2>
-              <div className="flex justify-center space-x-6">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-navy hover:text-gold transition-colors">
-                  <Facebook size={24} />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-navy hover:text-gold transition-colors">
-                  <Twitter size={24} />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-navy hover:text-gold transition-colors">
-                  <Instagram size={24} />
-                </a>
-                <a href="mailto:contact@zoeroberts.com" className="text-navy hover:text-gold transition-colors">
-                  <Mail size={24} />
-                </a>
-              </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="mt-12 rounded-xl bg-paper-warm p-6 text-center">
+            <p className="font-display text-lg font-bold text-ink">
+              Want to bring Zoe’s work to your classroom or family?
+            </p>
+            <Link
+              to="/contact"
+              className="mt-4 inline-flex rounded-lg bg-ink px-5 py-2.5 font-display font-bold text-white transition hover:bg-hero-blue"
+            >
+              Get in touch
+            </Link>
           </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };
