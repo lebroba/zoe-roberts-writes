@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Self-hosted fonts. Replaces the Google Fonts @import, which was render-blocking,
+   pulled 15 unused weights of Playfair Display, and sent every visitor's IP to Google. */
+/* latin + latin-ext only: covers EN plus the ES/FR/IT/PT roadmap.
+   The unscoped imports also ship Cyrillic, Greek, and Vietnamese — 62 files instead of 20. */
+@import "@fontsource/nunito/latin-700.css";
+@import "@fontsource/nunito/latin-800.css";
+@import "@fontsource/nunito/latin-ext-700.css";
+@import "@fontsource/nunito/latin-ext-800.css";
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter/latin-ext-400.css";
+@import "@fontsource/inter/latin-ext-500.css";
+@import "@fontsource/inter/latin-ext-600.css";
 
 @tailwind base;
 @tailwind components;
@@ -6,83 +19,38 @@
 
 @layer base {
   :root {
-    --background: 44 32% 95%;
-    --foreground: 222 84% 4.9%;
+    /* Brand palette, sampled from the book cover.
+       ink        #16324F   sunshine  #FFC72C
+       hero-blue  #1A4D8F   slate     #4A5568   paper-warm #FFFDF8 */
+    --background: 0 0% 100%;
+    --foreground: 211 56% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 211 56% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 211 56% 20%;
 
-    --primary: 222 47% 23%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 211 56% 20%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 41 72% 47%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 44 100% 59%;
+    --secondary-foreground: 211 56% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 42 100% 99%;
+    --muted-foreground: 218 17% 35%;
 
-    --accent: 41 72% 76%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 44 100% 59%;
+    --accent-foreground: 211 56% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 20% 89%;
+    --input: 214 20% 89%;
+    --ring: 214 69% 33%;
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 41 72% 47%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 212.5 59% 9%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 41 72% 76%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-
-    --sidebar-background: 222.2 84% 4.9%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 210 40% 98%;
-    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
-    --sidebar-accent: 212.5 59% 9%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 212.7 26.8% 83.9%;
+    --radius: 0.625rem;
   }
 }
 
@@ -92,153 +60,77 @@
   }
 
   body {
-    @apply bg-cream text-foreground font-sans;
+    @apply bg-paper text-slate font-sans antialiased;
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-ink;
+    text-wrap: balance;
+  }
+
+  /* Respect users who ask for reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
 @layer components {
   .book-cover {
-    @apply relative overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl rounded-lg;
+    @apply relative overflow-hidden rounded-md shadow-xl transition-transform duration-500;
   }
-  
+
   .book-cover:hover img {
-    @apply scale-105;
+    @apply scale-[1.03];
   }
 
-  .nav-link {
-    @apply relative inline-block py-2 text-navy hover:text-gold transition-colors duration-300;
-  }
-
-  .nav-link::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold to-light-navy transition-all duration-500;
-  }
-
-  .nav-link:hover::after {
-    @apply w-full;
-  }
-
-  /* Updated nav link styling for the new header design */
-  .nav-link {
-    @apply relative inline-block py-1 text-navy hover:text-gold transition-colors duration-300 tracking-wider uppercase font-medium text-sm;
-  }
-
+  /* Section heading with the cover's yellow as a underline swash. */
   .section-heading {
-    @apply text-3xl md:text-4xl font-playfair font-bold text-navy mb-6 relative inline-block;
+    @apply relative inline-block font-display text-3xl font-extrabold text-ink md:text-4xl;
   }
 
   .section-heading::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-1/3 h-1 bg-gradient-to-r from-gold to-soft-gold;
+    content: "";
+    @apply absolute -bottom-2 left-0 h-1 w-2/5 rounded-full bg-sunshine;
   }
-  
-  .glow-effect {
-    @apply relative overflow-hidden;
+
+  /* Marker-pen highlight behind inline text. */
+  .highlight {
+    background-image: linear-gradient(180deg, transparent 62%, theme("colors.sunshine") 62%);
   }
-  
-  .glow-effect::before {
-    content: '';
-    @apply absolute -inset-0.5 bg-gradient-to-r from-gold/30 to-navy/30 rounded-lg blur-sm opacity-0 transition-opacity duration-300;
+
+  .nav-link {
+    @apply relative inline-block py-1 text-sm font-semibold text-ink/75 transition-colors duration-200 hover:text-ink;
   }
-  
-  .glow-effect:hover::before {
-    @apply opacity-100;
+
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-0.5 w-0 rounded-full bg-sunshine transition-all duration-300;
   }
-  
-  .soft-shadow {
-    box-shadow: 0 10px 30px -15px rgba(26, 54, 93, 0.15);
+
+  .nav-link:hover::after,
+  .nav-link[aria-current="page"]::after {
+    @apply w-full;
   }
-  
-  .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-1;
-  }
-  
-  .glass-card {
-    @apply bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-lg;
-  }
-  
-  .gradient-border {
-    @apply relative rounded-lg p-[1px] overflow-hidden;
-    background: linear-gradient(to right, #D4AF37, #1A365D);
-  }
-  
-  .gradient-border > * {
-    @apply bg-white rounded-lg;
-  }
-  
-  .bg-pattern {
-    background-color: #F7F3E9;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
-  
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-navy via-light-navy to-navy;
-  }
-  
-  .gradient-button {
-    @apply relative overflow-hidden rounded-lg;
-    background: linear-gradient(90deg, #1A365D, #2C4870, #1A365D);
-    background-size: 200% 100%;
-    animation: gradientShift 6s ease infinite;
-  }
-  
-  .gradient-card {
-    @apply relative rounded-lg p-6 overflow-hidden;
-    background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(247,243,233,0.8));
-    box-shadow: 0 8px 32px rgba(26, 54, 93, 0.1);
+
+  .nav-link[aria-current="page"] {
+    @apply text-ink;
   }
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Modern scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(247, 243, 233, 0.5);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(26, 54, 93, 0.2);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(26, 54, 93, 0.4);
-}
-
-/* Custom selection color */
 ::selection {
-  background: rgba(212, 175, 55, 0.2);
-  color: #1A365D;
+  background: theme("colors.sunshine");
+  color: theme("colors.ink");
 }
