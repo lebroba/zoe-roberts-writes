@@ -31,6 +31,41 @@ change. Every step below happens inside Kit's web UI.
 
 ---
 
+## Task 0 — Sender address and domain authentication
+
+**Do this before any live test.** Until it is done, confirmation emails are
+likely to be rejected outright, and testing the funnel will produce a
+misleading failure.
+
+The account was originally sending from a `@yahoo.com` address. `yahoo.com`
+publishes:
+
+```
+_dmarc.yahoo.com → "v=DMARC1; p=reject; pct=100; ..."
+```
+
+`p=reject` instructs receiving servers to **reject** — not quarantine — any
+message claiming to be from `@yahoo.com` that was not sent through Yahoo's own
+infrastructure. Kit sends from Kit's servers, so those messages fail DMARC
+alignment against a reject policy. Gmail, Outlook and Yahoo all honour it.
+
+The same applies to any free consumer domain: gmail.com, outlook.com, aol.com.
+
+**Fix:**
+
+1. Create an address on the domain, e.g. `hello@zoesbooks.com`. The domain
+   already has mail hosting — its SPF record is
+   `v=spf1 include:spf.privateemail.com ~all` (Namecheap Private Email).
+2. In Kit, **Settings → Email**, change the sending address to it.
+3. Complete Kit's **domain authentication**. Kit issues CNAME records for
+   DKIM; add them at Namecheap alongside the existing `www` record. This is
+   what makes DMARC align.
+4. Optionally add a DMARC record at `_dmarc.zoesbooks.com` — none exists today.
+   Start at `p=none` to collect reports without risking rejection, and tighten
+   later once alignment is confirmed.
+
+---
+
 ## Task 1 — Create the `source` custom field
 
 **Why:** the site tags every sign-up with which page it came from
@@ -46,6 +81,11 @@ converts.
 4. Name it exactly `source` — lowercase, no spaces, no capital S.
 5. Save (**Update Subscriber**, or equivalent).
 
+**Check for an existing field first.** This account already had one named
+`Source` with a capital S, which does not match what the site sends, so every
+sign-up was being silently dropped. Renaming it to lowercase fixed it. If a
+similarly-named field exists, rename it rather than adding a second one.
+
 **Verify:** open a *different* subscriber. The `source` field should now appear
 on their profile too, empty. Custom fields apply account-wide, so if it only
 shows on one subscriber, it did not save.
@@ -58,8 +98,10 @@ shows on one subscriber, it did not save.
 (double opt-in) and it delivers the journal.
 
 1. Go to **Grow → Landing Pages & Forms** and open form `9728891`.
-2. Open the form's **Settings**, then the **Incentive** section.
-3. Confirm **"Send incentive email"** is enabled.
+2. Open the form's **Settings**. Kit now labels this section **"Confirmation
+   email"**; older documentation, including earlier versions of this file,
+   calls it "Incentive".
+3. Confirm **"Send confirmation email"** is enabled.
 4. Confirm **"Auto-confirm new subscribers" is OFF.** If it is on, the
    confirmation step is skipped, the incentive email never sends, and nobody
    receives the journal. Kit itself recommends against it.
@@ -132,13 +174,24 @@ thing is the reason this site was rebuilt.
 
 Only after Tasks 1–5 are done.
 
-Delete these subscribers (all created during integration testing, all
-unconfirmed):
+Delete these subscribers (all created during integration testing, all now
+showing as **bounced** — `@example.com` accepts no mail):
 
 - `zoesbooks-smoketest@example.com`
 - `zoesbooks-smoketest2@example.com`
 - `zoesbooks-smoketest3@example.com`
 - `prod-smoketest@example.com`
+
+**Leave `lebroba@gmail.com` alone.** It is a real sign-up from the live site
+(`source: free-guide-page`) and not part of the test data.
+
+Two practical notes:
+
+- The subscriber list defaults to a **Confirmed** filter, which shows none of
+  these. Switch it to **All** to see them.
+- Deletion is permanent, so it needs a human. Removing them tidies the list
+  but does not unwind the bounce events themselves — those already counted
+  against a new account's sending reputation.
 
 ---
 
