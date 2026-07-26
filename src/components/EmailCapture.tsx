@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useFormPost } from "@/hooks/useFormPost";
+import { validateKitResponse } from "@/lib/kit";
 import { CONTACT_EMAIL, KIT_ENDPOINT } from "@/content/site";
 
 interface EmailCaptureProps {
@@ -29,7 +30,8 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({
   className = "",
 }) => {
   const [email, setEmail] = useState("");
-  const { status, error, submit, disabled } = useFormPost(KIT_ENDPOINT);
+  // Kit answers 200 on failure, so the body has to be checked too.
+  const { status, error, submit, disabled } = useFormPost(KIT_ENDPOINT, validateKitResponse);
 
   if (status === "success") {
     return (
