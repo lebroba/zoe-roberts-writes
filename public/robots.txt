@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
+# The journal is the thing people subscribe to receive. It is served from a
+# stable URL so Kit's incentive email can link to it, but it should not turn
+# up in search results — that would route people around the sign-up entirely.
+#
+# This keeps it out of the index. It does not make the file private: anyone
+# with the link can fetch it, which is normal for a lead magnet.
+Disallow: /freebies/
+
 Sitemap: https://zoesbooks.com/sitemap.xml
