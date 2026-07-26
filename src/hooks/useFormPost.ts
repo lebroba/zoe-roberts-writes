@@ -11,11 +11,17 @@ export type PostStatus = "idle" | "submitting" | "success" | "error";
  */
 export type ResponseValidator = (body: unknown) => string | null;
 
+/**
+ * Payload values may nest one level: Kit takes custom fields as a `fields`
+ * object rather than as top-level keys.
+ */
+export type PostPayload = Record<string, string | Record<string, string>>;
+
 interface UseFormPostResult {
   status: PostStatus;
   /** Human-readable failure reason. Set only when status is "error". */
   error: string | null;
-  submit: (payload: Record<string, string>) => Promise<void>;
+  submit: (payload: PostPayload) => Promise<void>;
   reset: () => void;
   /** True when the endpoint is not configured, so the form cannot be submitted. */
   disabled: boolean;
@@ -42,7 +48,7 @@ export function useFormPost(
   const [error, setError] = useState<string | null>(null);
 
   const submit = useCallback(
-    async (payload: Record<string, string>) => {
+    async (payload: PostPayload) => {
       if (!endpoint) {
         setStatus("error");
         setError("This form isn’t connected yet. Please try again later.");

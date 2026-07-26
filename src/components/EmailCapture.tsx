@@ -50,7 +50,14 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          void submit({ email_address: email, source });
+          // Kit takes custom fields nested under `fields`, matching the
+          // fields[name] convention its embed forms use. Sent at the top level
+          // it is accepted and silently discarded, so which page converted
+          // would never be recorded.
+          //
+          // Requires a custom field named `source` to exist in Kit
+          // (Subscribers -> Custom fields); otherwise Kit drops it.
+          void submit({ email_address: email, fields: { source } });
         }}
         className="flex max-w-[520px] flex-wrap gap-2.5"
       >
